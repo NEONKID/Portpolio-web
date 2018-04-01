@@ -1,0 +1,26 @@
+/* Sections */
+.sections-wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+  
+.section {
+    margin-bottom: 30px;
+
+    .section-inner {
+        background: #fff;
+        padding: 30px;
+    }
+      
+    .heading {
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: #545e69;
+        font-size: 24px;
+    }
+      
+    .content .more-link .fa {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+}

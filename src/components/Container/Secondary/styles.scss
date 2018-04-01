@@ -1,0 +1,23 @@
+/* Info Section */
+.info  {
+    .fa {
+        margin-right: 15px;
+        color: #ccd1d6;
+    }
+
+    .fa, .fa-envelope-o {
+        font-size: 14px;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    li:last-child {
+        margin-bottom: 0;
+    }
+}

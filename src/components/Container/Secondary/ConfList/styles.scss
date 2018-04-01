@@ -1,0 +1,18 @@
+/* List section */
+.list {
+    ul li {
+        margin-bottom: 10px;
+
+        .fa {
+            margin-right: 5px;
+        }
+
+        a {
+            color: #778492;
+        }
+
+        a:hover {
+            color: #49515a;
+        }
+    }
+}
