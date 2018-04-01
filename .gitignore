@@ -9,6 +9,9 @@ coverage
 # production
 build
 
+# CSS
+*/*.css
+
 # misc
 .DS_Store
 npm-debug.log.*

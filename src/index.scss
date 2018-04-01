@@ -46,7 +46,7 @@ a:focus {
 }
 
 .btn, a.btn {
-    -webkit-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -84,12 +84,12 @@ a.btn-cta-secondary,
 	border: 1px solid #479FC8;
 	color: #fff;
 	font-weight: 600;
-    text-transform: uppercase;
+	text-transform: uppercase;
     
     :hover {
         background: #3893bd;
-	    border: 1px solid #3893bd;
-	    color: #fff;
+		border: 1px solid #3893bd;
+		color: #fff;
     }
 }
 
@@ -104,17 +104,17 @@ a.btn-cta-secondary,
 
 a.dotted-link {
 	border-bottom: 1px dotted #778492;
-    color: #778492;
+	color: #778492;
     
     :hover {
         text-decoration: none;
-	    color: #49515a;
+		color: #49515a;
     }
 }
 
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
-	.header {
+	header {
 		text-align: center;
 		
 		.profile-image {

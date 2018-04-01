@@ -4,6 +4,16 @@ This repository is my portfolio repository. Used React.js library was developed 
 
 
 
+## Build CSS (Required)
+
+```
+$ yarn build-css
+```
+
+This is a command that changes the scss code to css.
+
+
+
 ## Production
 
 ```
