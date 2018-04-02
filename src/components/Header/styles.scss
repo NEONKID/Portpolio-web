@@ -66,3 +66,24 @@
         width: 1360px;
     }
 }
+
+@media (max-width: 767px) {
+    .header {
+		text-align: center;
+		
+		.profile-image {
+			float: none !important;
+			margin: 0 auto;
+	  	}
+
+	  	.profile-content {
+			float: none !important;
+			text-align: center;
+	  	}
+
+	  	.btn {
+			margin-top: 30px;
+			float: none !important;
+	  	}
+	}
+}

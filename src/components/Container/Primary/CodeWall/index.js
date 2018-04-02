@@ -10,9 +10,9 @@ class CodeWall extends Component {
         super(props);
         this.state = {
             projectList: [{
-                title: 'OpenPOS',
-                link: '//github.com/neonkid/OpenPOS',
-                desc: 'MySQL DBMS를 사용한 Windows 운영체제용 POS 프로그램', 
+                title: 'DuribonDuribon',
+                link: '//github.com/neonkid/DuribonDuribon',
+                desc: '단국대학교 천안캠퍼스 길 안내 애플리케이션', 
                 open: true
             }, {
                 title: 'ShortenURL',
