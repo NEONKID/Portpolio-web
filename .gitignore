@@ -10,7 +10,7 @@ coverage
 build
 
 # CSS
-*/*.css
+*.css
 
 # misc
 .DS_Store

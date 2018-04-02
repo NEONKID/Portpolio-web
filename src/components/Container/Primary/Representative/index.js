@@ -4,7 +4,7 @@ import './styles.css';
 import MainProject from './MainProject';
 import SubProject from './SubProject';
 
-import DuribonDuribon from './img/projects/project-2.png';
+import OpenPOS from './img/projects/project-2.png';
 import SmartDiary from './img/projects/project-3.png';
 
 class Representative extends Component {
@@ -12,17 +12,19 @@ class Representative extends Component {
         super(props);
         this.state = {
             projectList: [{
-                title: 'DuribonDuribon',
-                link: '//github.com/neonkid/DuribonDuribon',
-                desc: '단국대학교 천안캠퍼스 길 안내 앱',
-                more: '#',
-                imsrc: DuribonDuribon
+                title: 'OpenPOS',
+                link: '//github.com/neonkid/OpenPOS',
+                desc: 'Windows용 공개형 POS 프로그램',
+                more: '//github.com/neonkid/OpenPOS',
+                imsrc: OpenPOS,
+                open: false
             }, {
                 title: 'SmartDiary',
                 link: '//blog.neonkid.xyz/105',
                 desc: 'Java기반 수입/지출 기반형 다이어리 프로그램',
-                more: '#',
-                imsrc: SmartDiary
+                more: '//blog.neonkid.xyz/105',
+                imsrc: SmartDiary,
+                open: true
             }]
         };
     }
@@ -36,7 +38,7 @@ class Representative extends Component {
                         <MainProject />
                         <hr className="divider" />
                         {this.state.projectList.map((project, i) => {
-                            return (<SubProject data={project} key={i}/>);
+                            return (<SubProject data={project} isOpen={project.open} key={i}/>);
                         })}
                     </div>              
                 </div>

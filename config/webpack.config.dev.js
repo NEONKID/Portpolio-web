@@ -231,40 +231,53 @@ module.exports = {
 		// <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 		// In development, this will be an empty string.
 		new InterpolateHtmlPlugin(env.raw),
+
 		// Generates an `index.html` file with the <script> injected.
 		new HtmlWebpackPlugin({
 			inject: true,
 			template: paths.appHtml,
 		}),
+
 		// Add module names to factory functions so they appear in browser profiler.
 		new webpack.NamedModulesPlugin(),
+
 		// Makes some environment variables available to the JS code, for example:
 		// if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
 		new webpack.DefinePlugin(env.stringified),
+
 		// This is necessary to emit hot updates (currently CSS only):
 		new webpack.HotModuleReplacementPlugin(),
+
 		// Watcher doesn't work well if you mistype casing in a path so we use
 		// a plugin that prints an error when you attempt to do this.
 		// See https://github.com/facebookincubator/create-react-app/issues/240
 		new CaseSensitivePathsPlugin(),
+
 		// If you require a missing module and then `npm install` it, you still have
 		// to restart the development server for Webpack to discover it. This plugin
 		// makes the discovery automatic so you don't have to restart.
 		// See https://github.com/facebookincubator/create-react-app/issues/186
 		new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-		// Moment.js is an extremely popular library that bundles large locale files
-		// by default due to how Webpack interprets its code. This is a practical
-		// solution that requires the user to opt into importing specific locales.
-		// https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
-		// You can remove this if you don't use Moment.js:
-		new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-		// Using jQuery...
+		
+		/**
+		 * jQuery를 사용할 때 반드시 참고할 것. (동작하지 않을 경우)
+		 * 
+		 * 평소에 static html 파일에서 jQuery를 불러올 때는, script 태그를 사용하였다.
+		 * 하지만 React 에서는 npm / yarn 을 통해 jQuery를 추가한 후 로드하게 된다.
+		 * 이 때, 현재 이 프로젝트에 있는 webpack.config.dev.js 파일을 수정하게 될텐데,
+		 * 이 파일 수정해도 의미가 없다. 이 앱은 create-react-app 프로젝트에 의해 처음 만들어져서,
+		 * react-scripts에 의해 디버깅, 실행하게 되는데, 그렇기 때문에 yarn reject 커맨드를 통해,
+		 * 설정 파일을 분리하거나 (이 작업은 되돌릴 수 없으므로 유의.) node_modules에 있는 
+		 * react-scripts 폴더에서 webpack.config.dev.js 파일을 반드시 수정하기 바람.
+		 * 이 케이스는 Production도 포함한다. webpack.config.prod.js 파일 반드시 수정할 것.
+     	 */
 		new webpack.ProvidePlugin({
 			jQuery: 'jquery',
 			$: 'jquery',
 			jquery: 'jquery'
 		})
 	],
+
 	// Some libraries import Node modules but don't use them in the browser.
 	// Tell Webpack to provide empty mocks for them so importing them works.
 	node: {
