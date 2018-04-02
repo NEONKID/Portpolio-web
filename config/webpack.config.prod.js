@@ -102,12 +102,6 @@ module.exports = {
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
       new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
-      // Using jQuery...
-      new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery'
-      }),
     ],
   },
   module: {
@@ -248,6 +242,7 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin(env.raw),
+
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
@@ -265,11 +260,13 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env.stringified),
+
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -291,16 +288,19 @@ module.exports = {
       },
       sourceMap: shouldUseSourceMap,
     }),
+
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
       filename: cssFilename,
     }),
+
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
+
     // Generate a service worker script that will precache, and keep up to date,
     // the HTML & assets that are part of the Webpack build.
     new SWPrecacheWebpackPlugin({
@@ -331,13 +331,30 @@ module.exports = {
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     }),
-    // Moment.js is an extremely popular library that bundles large locale files
-    // by default due to how Webpack interprets its code. This is a practical
-    // solution that requires the user to opt into importing specific locales.
-    // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
-    // You can remove this if you don't use Moment.js:
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    
+    /**
+		 * jQuery를 사용할 때 반드시 참고할 것. (동작하지 않을 경우)
+		 * 
+		 * 평소에 static html 파일에서 jQuery를 불러올 때는, script 태그를 사용하였다.
+		 * 하지만 React 에서는 npm / yarn 을 통해 jQuery를 추가한 후 로드하게 된다.
+		 * 이 때, 현재 이 프로젝트에 있는 webpack.config.prod.js 파일을 수정하게 될텐데,
+		 * 이 파일 수정해도 의미가 없다. 이 앱은 create-react-app 프로젝트에 의해 처음 만들어져서,
+		 * react-scripts에 의해 디버깅, 실행하게 되는데, 그렇기 때문에 yarn reject 커맨드를 통해,
+		 * 설정 파일을 분리하거나 (이 작업은 되돌릴 수 없으므로 유의.) node_modules에 있는 
+		 * react-scripts 폴더에서 webpack.config.prod.js 파일을 반드시 수정하기 바람.
+		 * 
+     * 또한 jQuery가 아닌 다른 모듈에 대해서도 반드시 이 파일은 참고용으로만 사용, 
+     * (여기는 아무리 수정해도 reject 하지 않는 이상 내용이 반영되지 않음)
+     * 
+     * reject 이전에는 node_module/react-scripts에 존재하는 설정 파일을 건드릴 것.
+     */
+		new webpack.ProvidePlugin({
+			jQuery: 'jquery',
+			$: 'jquery',
+			jquery: 'jquery'
+		})
   ],
+  
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {

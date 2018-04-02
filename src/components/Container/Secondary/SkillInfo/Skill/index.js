@@ -6,7 +6,7 @@ import $ from 'jquery';
 class Skill extends Component {
     componentDidMount() {
         this.renderSkillbar();
-        // this.renderSkilltip();
+        this.renderSkilltip();
     }
 
     renderSkillbar() {
@@ -23,7 +23,6 @@ class Skill extends Component {
     }
 
     renderSkilltip() {
-        // Todo: 현재 Tooltip이 동작하지 않음, 원인을 찾아야 함.
         $('.level-label').tooltip();
     }
 

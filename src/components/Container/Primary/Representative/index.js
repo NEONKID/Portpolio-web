@@ -16,13 +16,15 @@ class Representative extends Component {
                 link: '//github.com/neonkid/OpenPOS',
                 desc: 'Windows용 공개형 POS 프로그램',
                 more: '//github.com/neonkid/OpenPOS',
-                imsrc: OpenPOS
+                imsrc: OpenPOS,
+                open: false
             }, {
                 title: 'SmartDiary',
                 link: '//blog.neonkid.xyz/105',
                 desc: 'Java기반 수입/지출 기반형 다이어리 프로그램',
                 more: '//blog.neonkid.xyz/105',
-                imsrc: SmartDiary
+                imsrc: SmartDiary,
+                open: true
             }]
         };
     }
@@ -36,7 +38,7 @@ class Representative extends Component {
                         <MainProject />
                         <hr className="divider" />
                         {this.state.projectList.map((project, i) => {
-                            return (<SubProject data={project} key={i}/>);
+                            return (<SubProject data={project} isOpen={project.open} key={i}/>);
                         })}
                     </div>              
                 </div>

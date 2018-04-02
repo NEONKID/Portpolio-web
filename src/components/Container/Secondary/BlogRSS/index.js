@@ -3,23 +3,20 @@ import $ from 'jquery';
 import 'jquery-rss';
 import './styles.css';
 
-import 'jquery-rss/dist/jquery.rss.min';
-
 class BlogRSS extends Component {
     componentDidMount() {
-        // 외부에서 참조하는 jQuery를 실행하는 경우,,
-        // this.renderFeed();
+        this.renderFeed();
     }
 
     renderFeed() {
         $("#rss-feeds").rss(
             // Change this to your own rss feeds
-            "http://feeds.feedburner.com/TechCrunch/startups",
+            "http://blog.neonkid.xyz/rss",
             {
                 // how many entries do you want?
                 // default: 4
                 // valid values: any integer
-                limit: 4,
+                limit: 3,
                 
                 // the effect, which is used to let the entries appear
                 // default: 'show'

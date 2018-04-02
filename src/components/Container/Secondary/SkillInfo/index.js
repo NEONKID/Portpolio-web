@@ -8,22 +8,22 @@ class SkillInfo extends Component {
         this.state = {
             skillData: [{
                 title: 'Python',
-                tooltip: '간단한 REST API 개발 가능',
+                tooltip: 'Flask 를 사용하여 REST API 개발 경험 있음',
                 level: '25%',
                 grade: 'Basic'
             }, {
                 title: 'Java',
-                tooltip: 'JavaFX 애플리케이션 개발 및 배포 경험 있음',
+                tooltip: 'OOP 중점으로 개발, Android 개발, JavaFX 개발 및 배포 경험이 있음',
                 level: '45%',
                 grade: 'Middle class'
             }, {
                 title: 'Android',
-                tooltip: '',
-                level: '30%',
+                tooltip: '안드로이드 앱 개발 경험 있음',
+                level: '25%',
                 grade: 'Basic'
             }, {
                 title: 'Linux',
-                tooltip: '',
+                tooltip: '소규모 리눅스 서버 관리 경험 / 개발 운영체제로 사용 중',
                 level: '55%',
                 grade: 'Proficient'
             }]
