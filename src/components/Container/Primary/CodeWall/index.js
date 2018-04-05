@@ -21,7 +21,7 @@ class CodeWall extends Component {
                 open: true
             }, {
                 title: 'DLUG BOT',
-                link: '#',
+                link: '//pf.kakao.com/_uxaxjKu/chat',
                 desc: 'DLUG (단국대학교 리눅스 동아리) 챗봇',
                 open: false
             }]
