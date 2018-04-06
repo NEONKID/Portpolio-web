@@ -4,8 +4,8 @@ import './styles.css';
 import MainProject from './MainProject';
 import SubProject from './SubProject';
 
-import DuribonDuribon from './img/projects/project-2.png';
-import SmartDiary from './img/projects/project-3.png';
+import OpenPOS from './img/OpenPOS.png';
+import SmartDiary from './img/SmartDiary.png';
 
 class Representative extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Representative extends Component {
                 link: '//github.com/neonkid/OpenPOS',
                 desc: 'Windows용 공개형 POS 프로그램',
                 more: '#',
-                imsrc: DuribonDuribon
+                imsrc: OpenPOS
             }, {
                 title: 'SmartDiary',
                 link: '//blog.neonkid.xyz/105',
