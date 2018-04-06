@@ -8,6 +8,8 @@ coverage
 
 # production
 build
+.firebaserc
+firebase.json
 
 # CSS
 *.css

@@ -16,9 +16,6 @@ class Header extends Component {
             }, {
                 icon: 'github-alt',
                 link: '//github.com/neonkid'
-            }, {
-                icon: 'facebook',
-                link: '//facebook.com/NK.4869'
             }]
         }
     }

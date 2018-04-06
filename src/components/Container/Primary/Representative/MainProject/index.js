@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
-import HomeIoT from '../img/projects/project-featured.png';
+import HomeIoT from '../img/HomeIoT_Main.png';
 
 class MainProject extends Component {
     render() {
@@ -15,14 +15,14 @@ class MainProject extends Component {
                         <img className="img-responsive project-image" src={HomeIoT} alt="project name" />
                     </a>
                     <div className="ribbon">
-                        <div className="text">New</div>
+                        <div className="text">Great</div>
                     </div>
                 </div>                     
                 <div className="desc text-left">                                    
-                    <p>You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. At vero eos et accusamus et iusto odio dignissimos ducimus.</p>
+                    <p>집 안에 있는 창문, 현관문들이 온도와 기상 환경 데이터들의 변화를 통해 이들을 자동 제어하고 집 바깥에서도 제어할 수 있는 스마트홈을 생각하여 개발한 저의 졸업 작품입니다.</p>
+                    <p>해당 작품에서 저는 Client Application을 담당하였으며 플랫폼으로 Android를 선택하였고, 집 안의 센서들을 버튼으로 제어하는 것과 동시에 음성으로 제어할 수 있도록 구현하였습니다.</p>
                 </div>        
-                <Button color="info" className="btn-cta-secondary"><FontAwesome name='thumbs-o-up' /> Back my project</Button>                 
+                <Button color="info" className="btn-cta-secondary"><FontAwesome name='thumbs-o-up' /> Coming soon...</Button>                 
             </div>
         );
     }
