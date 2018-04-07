@@ -1,0 +1,12 @@
+language: node_js
+node_js: lts/*
+install: true
+
+script:
+  - yarn install
+  - yarn build-css
+  - yarn build
+
+branches:
+  only:
+    - master
