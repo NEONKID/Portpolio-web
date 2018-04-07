@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 
+import ExampleProject from '../img/project-featured.png';
+
 class SubProject extends Component {
     render() {
         return (
@@ -32,7 +34,7 @@ SubProject.defaultProps = {
         title: 'Project name',
         link: '#',
         desc: 'Project description',
-        imsrc: 'assets/images/projects/project-5.png'
+        imsrc: ExampleProject
     }
 }
 
