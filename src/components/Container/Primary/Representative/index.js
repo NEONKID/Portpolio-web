@@ -15,13 +15,11 @@ class Representative extends Component {
                 title: 'OpenPOS',
                 link: '//github.com/neonkid/OpenPOS',
                 desc: 'Windows용 공개형 POS 프로그램',
-                more: '#',
                 imsrc: OpenPOS
             }, {
                 title: 'SmartDiary',
                 link: '//blog.neonkid.xyz/105',
                 desc: 'Java기반 수입/지출 기반형 다이어리 프로그램',
-                more: '#',
                 imsrc: SmartDiary
             }]
         };
