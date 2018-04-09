@@ -6,7 +6,6 @@ import FontAwesome from 'react-fontawesome';
 class Edu extends Component {
     render() {
         const data = this.props.data;
-
         return (
             <div className="item">
                 <h3 className="title"><FontAwesome name="graduation-cap" /> { data.major }</h3>

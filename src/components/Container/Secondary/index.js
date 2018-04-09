@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Info from './Info';
 import SkillInfo from './SkillInfo';
 import EduInfo from './EduInfo';
@@ -9,19 +8,17 @@ import BlogRSS from './BlogRSS';
 
 import './styles.css';
 
-class Secondary extends Component {
-    render() {
-        return (
-            <div className="secondary col-md-4 col-sm-12 col-xs-12">
-                <Info />
-                <SkillInfo />
-                <EduInfo />
-                <LangInfo />
-                <ConfList />
-                <BlogRSS />
-            </div>
-        );
-    }
+const Secondary = () => {
+    return (
+        <div className="secondary col-md-4 col-sm-12 col-xs-12">
+            <Info />
+            <SkillInfo />
+            <EduInfo />
+            <LangInfo />
+            <ConfList />
+            <BlogRSS />
+        </div>
+    );
 }
 
 export default Secondary;
