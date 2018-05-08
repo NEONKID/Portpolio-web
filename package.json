@@ -20,6 +20,7 @@
     "react-fontawesome": "^1.6.1",
     "react-github-activity": "^1.0.2",
     "react-octicon": "^3.0.1",
+    "react-youtube": "^7.6.0",
     "reactstrap": "^5.0.0"
   },
   "scripts": {
