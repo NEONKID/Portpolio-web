@@ -4,9 +4,9 @@ import FontAwesome from 'react-fontawesome';
 import { ButtonGroup, Button } from 'reactstrap';
 
 import Item from './Item';
+import NotiIcon from './img/NotiIcon.png';
 
 import './styles.css';
-import NotiIcon from './img/NotiIcon.png';
 
 class Demo extends React.Component {
     state = {
@@ -29,10 +29,9 @@ class Demo extends React.Component {
                 <div className="content">
                     { this.state.pvName === undefined ? initPv : pv}
                     <ButtonGroup>
-                        <Button color="primary" onClick={() => this.setState({pvName: 'lVnw2F2O4DU'})}>창문 제어(Servo Motor)</Button>
-                        <Button color="primary" onClick={() => this.setState({pvName: '2_B7H4lB6Eg'})}>조명 제어(LED Light)</Button>
-                        <Button color="primary" onClick={() => this.setState({pvName: 'ql-9d7asuV4'})}>비상벨 제어(Bell)</Button>
-                        <Button color="primary" onClick={() => this.setState({pvName: 'KzdFw2BjNVg'})}>복핣 명령 제어</Button>
+                        { this.props.data.map((video, i) => {
+                            return (<Button color="primary" onClick={() => this.setState({pvName: video.link})} key={i}>{video.title}</Button> )
+                        })}
                     </ButtonGroup>
                 </div>
             </div>
@@ -41,7 +40,15 @@ class Demo extends React.Component {
 }
 
 Demo.propTypes = {
+    data: PropTypes.array.isRequired,
     onClose: PropTypes.func.isRequired
+}
+
+Demo.defaultProps = {
+    data: {
+        link: 'BUhuOwwD4n8',
+        title: 'Sample Video (Sonic Mania Plus Trailer)'
+    }
 }
 
 export default Demo;
