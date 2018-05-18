@@ -37,9 +37,9 @@ class CodeWall extends Component {
                         {this.state.projectList.map((project, i) => {
                             return (<Project data={ project } isOpen={ project.open } key={i}/>);
                         })}
-                        <Button color="success" className="btn-cta-secondary">
+                        <a href="//github.com/neonkid"><Button color="success" className="btn-cta-secondary">
                             More on Github <FontAwesome name="chevron-right" />
-                        </Button>
+                        </Button></a>
                     </div> 
                 </div>                 
             </section>
