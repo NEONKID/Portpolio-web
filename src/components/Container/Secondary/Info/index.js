@@ -10,7 +10,7 @@ const Info = () => {
                     <ul className="list-unstyled">
                         <li><FontAwesome name="map-marker" /><span className="sr-only">Location:</span>Cheonan, South Korea</li>
                         <li><FontAwesome name="envelope-o" /><span className="sr-only">Email:</span><a href="mailto:contact@neonkid.xyz">contact@neonkid.xyz</a></li>
-                        <li><FontAwesome name="link" /><span className="sr-only">Website:</span><a href="http//blog.neonkid.xyz">http://blog.neonkid.xyz</a></li>
+                        <li><FontAwesome name="link" /><span className="sr-only">Website:</span><a href="http://blog.neonkid.xyz">http://blog.neonkid.xyz</a></li>
                     </ul>
                 </div> 
             </div>             

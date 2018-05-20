@@ -21,9 +21,9 @@ class CodeWall extends Component {
                 open: true
             }, {
                 title: 'DLUG BOT',
-                link: '//pf.kakao.com/_uxaxjKu/chat',
+                link: '//github.com/neonkid/DLUGBot',
                 desc: 'DLUG (단국대학교 리눅스 동아리) 챗봇 (using KakaoTalk)',
-                open: false
+                open: true
             }]
         };
     }
@@ -37,9 +37,9 @@ class CodeWall extends Component {
                         {this.state.projectList.map((project, i) => {
                             return (<Project data={ project } isOpen={ project.open } key={i}/>);
                         })}
-                        <Button color="success" className="btn-cta-secondary">
+                        <a href="//github.com/neonkid"><Button color="success" className="btn-cta-secondary">
                             More on Github <FontAwesome name="chevron-right" />
-                        </Button>
+                        </Button></a>
                     </div> 
                 </div>                 
             </section>
