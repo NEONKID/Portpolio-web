@@ -28,7 +28,7 @@ class Header extends Component {
                         src={Profile} alt="Kwang Soo Jeong" />
                     <div className="profile-content pull-left">
                         <h1 className="name">Kwang Soo Jeong</h1>
-                        <h2 className="desc">Junior Developer</h2>   
+                        <h2 className="desc">Junior Data Engineer</h2>   
                         <ul className="social list-inline">
                             {this.state.socialList.map((social, i) => {
                                 return (<Social data={social}  key={i} />);

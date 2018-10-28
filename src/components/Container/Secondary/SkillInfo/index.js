@@ -26,6 +26,11 @@ class SkillInfo extends Component {
                 tooltip: '소규모 리눅스 서버 관리 경험 / 개발 운영체제로 사용 중',
                 level: '55%',
                 grade: 'Proficient'
+            }, {
+                title: 'R',
+                tooltip: 'ETL 모듈 개발 경험 있음',
+                level: '10%',
+                grade: 'Basic'
             }]
         };
     }
