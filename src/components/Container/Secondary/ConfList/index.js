@@ -7,6 +7,10 @@ class ConfList extends Component {
         super(props);
         this.state = {
             confHist: [{
+                name: 'OHDSI Symposium 2018',
+                link: '//www.ohdsi.org/events/2018-ohdsi-symposium/',
+                loc: 'Washington D.C'
+            }, {
                 name: 'Google I/O Extended 2016',
                 link: '//festi.kr/festi/2016-io-extended-seoul-after/',
                 loc: 'Seoul'

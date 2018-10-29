@@ -15,14 +15,14 @@ class CodeWall extends Component {
                 desc: '단국대학교 천안캠퍼스 길 안내 애플리케이션', 
                 open: true
             }, {
-                title: 'ShortenURL',
-                link: '//github.com/neonkid/ShortenURL',
-                desc: '원본URL을 짧은 URL로 변환해주는 Windows 서버 애플리케이션',
+                title: 'RCDM-ETL',
+                link: '//github.com/neonkid/RCDM-ETL',
+                desc: '방사선(Radiology e.q: CT, MRI, X-ray) 이미지 ETL 모듈',
                 open: true
             }, {
                 title: 'DLUG BOT',
                 link: '//github.com/neonkid/DLUGBot',
-                desc: 'DLUG (단국대학교 리눅스 동아리) 챗봇 (using KakaoTalk)',
+                desc: 'DLUG Chatbot (2019. 12. 31 서비스 종료 예정)',
                 open: true
             }]
         };

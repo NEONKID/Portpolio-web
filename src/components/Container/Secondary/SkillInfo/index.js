@@ -13,7 +13,7 @@ class SkillInfo extends Component {
                 grade: 'Basic'
             }, {
                 title: 'Java',
-                tooltip: 'OOP 중점으로 개발, Android 개발, JavaFX 개발 및 배포 경험이 있음',
+                tooltip: 'Spring boot 개발, JavaFX 개발 및 배포 및 현재 오픈 프로젝트 기여 중',
                 level: '45%',
                 grade: 'Middle class'
             }, {
@@ -26,6 +26,11 @@ class SkillInfo extends Component {
                 tooltip: '소규모 리눅스 서버 관리 경험 / 개발 운영체제로 사용 중',
                 level: '55%',
                 grade: 'Proficient'
+            }, {
+                title: 'R',
+                tooltip: 'ETL 모듈 개발 경험 및 현재 오픈 프로젝트 기여 중',
+                level: '10%',
+                grade: 'Basic'
             }]
         };
     }

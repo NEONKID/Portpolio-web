@@ -24,11 +24,11 @@ class Header extends Component {
         return (
             <header className="header">
                 <div className="container">                       
-                    <img className="profile-image img-responsive pull-left" 
+                    <img className="profile-image img-responsive pull-left" width="200" height="150" 
                         src={Profile} alt="Kwang Soo Jeong" />
                     <div className="profile-content pull-left">
                         <h1 className="name">Kwang Soo Jeong</h1>
-                        <h2 className="desc">Junior Developer</h2>   
+                        <h2 className="desc">Junior Data Engineer</h2>   
                         <ul className="social list-inline">
                             {this.state.socialList.map((social, i) => {
                                 return (<Social data={social}  key={i} />);
