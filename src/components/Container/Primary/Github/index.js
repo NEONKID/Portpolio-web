@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GithubFeed from 'react-github-activity';
 import axios from 'axios';
+import { FormattedMessage } from 'react-intl';
 
 import 'react-octicon';
 import './styles.css';
@@ -28,7 +29,7 @@ class Github extends Component {
         return (
             <section className="github section">
                 <div className="section-inner">
-                    <h2 className="heading">My GitHub</h2>              
+                    <h2 className="heading"><FormattedMessage id='my-github'></FormattedMessage></h2>              
                     <div id="github-graph" className="github-graph">
                     </div>   
                     <div id="ghfeed" className="ghfeed">

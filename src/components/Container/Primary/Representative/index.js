@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import './styles.css';
 
 import MainProject from './MainProject';
@@ -8,28 +9,36 @@ import OpenPOS from './img/OpenPOS.png';
 import SmartDiary from './img/SmartDiary.png';
 
 class Representative extends Component {
+    
     constructor(props) {
         super(props);
+
+        const {
+            intl 
+        } = this.props;
+
         this.state = {
             projectList: [{
                 title: 'OpenPOS',
                 link: '//github.com/neonkid/OpenPOS',
-                desc: 'Windows용 공개형 POS 프로그램',
+                desc: intl.formatMessage({ id: 'rp-sub-A-desc'}),
                 imsrc: OpenPOS
             }, {
                 title: 'SmartDiary',
                 link: '//blog.neonkid.xyz/105',
-                desc: 'Java기반 수입/지출 기반형 다이어리 프로그램',
+                desc: intl.formatMessage({ id: 'rp-sub-B-desc'}),
                 imsrc: SmartDiary
             }]
         };
     }
 
-    render() {
+    render() { 
         return (
             <section className="latest section">
                 <div className="section-inner">
-                    <h2 className="heading">Representative Project</h2>
+                    <h2 className="heading">
+                        <FormattedMessage id='rp-card' />
+                    </h2>
                     <div className="content">    
                         <MainProject />
                         <hr className="divider" />
@@ -43,4 +52,4 @@ class Representative extends Component {
     }
 }
 
-export default Representative;
+export default injectIntl(Representative);
