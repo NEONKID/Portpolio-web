@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
+
 import $ from 'jquery';
 import 'jquery-rss';
 import './styles.css';
@@ -41,7 +43,9 @@ class BlogRSS extends Component {
         return (
             <aside className="blog aside section">
                 <div className="section-inner">
-                    <h2 className="heading">Latest Blog Posts</h2>
+                    <h2 className="heading">
+                        <FormattedMessage id='ba-title'></FormattedMessage>
+                    </h2>
                     <div id="rss-feeds" className="content"></div>
                 </div>
             </aside>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { FormattedMessage }from 'react-intl';
 
 class AboutContent extends Component {
     render() {
         return (
-            <p>Hello I'm Kwang Soo Jeong (Neon K.I.D)</p>
+             <p><FormattedMessage id="ab-intro"></FormattedMessage></p>
         );
     }
 }

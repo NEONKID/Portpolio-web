@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
+
 import Conference from './Conference';
 import './styles.css';
 
@@ -30,7 +32,9 @@ class ConfList extends Component {
         return (
             <aside className="list conferences aside section">
                 <div className="section-inner">
-                    <h2 className="heading">Conferences</h2>
+                    <h2 className="heading">
+                        <FormattedMessage id='conf-title'></FormattedMessage>
+                    </h2>
                     <div className="content">
                         <ul className="list-unstyled">
                             {this.state.confHist.map((conference, i) => {

@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
+import { injectIntl, FormattedMessage } from 'react-intl';
+
 import './styles.css';
 import Lang from './Lang';
 
 class LangInfo extends Component {
     constructor(props) {
         super(props);
+        
+        const {
+            intl
+        } = this.props;
+
         this.state = {
             langList: [{
-                name: 'Korean',
-                level: 'Native Speaker',
+                name: intl.formatMessage({ id: 'lang-ko' }),
+                level: intl.formatMessage({ id: 'lang-speaker'}),
                 star: 5
             }, {
-                name: 'Japanese',
-                level: 'Simple communicable',
+                name: intl.formatMessage({ id: 'lang-jp' }),
+                level: intl.formatMessage({ id: 'lang-speaking' }),
                 star: 2
             }, {
-                name: 'English',
-                level: 'Simple Reading',
+                name: intl.formatMessage({ id: 'lang-en' }),
+                level: intl.formatMessage({ id: 'lang-reading' }),
                 star: 2
             }]
         };
@@ -26,7 +33,9 @@ class LangInfo extends Component {
         return (
             <aside className="languages aside section">
                 <div className="section-inner">
-                    <h2 className="heading">Languages</h2>
+                    <h2 className="heading">
+                        <FormattedMessage id='lang-title'></FormattedMessage>
+                    </h2>
                     <div className="content">
                         <ul className="list-unstyled">
                             {this.state.langList.map((lang, i) => {
@@ -40,4 +49,4 @@ class LangInfo extends Component {
     }
 }
 
-export default LangInfo;
+export default injectIntl(LangInfo);
