@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import WebFontLoader from '@dr-kobros/react-webfont-loader';
+import en from 'react-intl/locale-data/en';
+import ko from 'react-intl/locale-data/ko';
 
 import 'bootstrap3';
 import 'bootstrap3/dist/css/bootstrap.min.css';
@@ -10,9 +12,6 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import './index.css';
 import App from './components/App';
-
-import en from 'react-intl/locale-data/en';
-import ko from 'react-intl/locale-data/ko';
 import locale from './locale';
 
 const config = {
@@ -24,12 +23,23 @@ const config = {
 addLocaleData([...en, ...ko]);
 
 const callback = status => {}
-const defaultLang = localStorage.getItem('lang') || 'en';
+
+// Your Language
+const lang = navigator.userLanguage;
+
+// If first connect my portpolio
+if(localStorage.getItem('locale') === null) {
+    if(lang === 'ko') {
+        localStorage.setItem('locale', 'ko');
+    } else {
+        localStorage.setItem('locale', 'en');
+    }
+}
 
 render(
     <BrowserRouter>
         <WebFontLoader config={config} onStatus={callback}>
-            <IntlProvider locale={defaultLang} messages={locale[defaultLang]}>
+            <IntlProvider locale={localStorage.getItem('locale')} messages={locale[localStorage.getItem('locale')]}>
                 <App />
             </IntlProvider>
         </WebFontLoader>
