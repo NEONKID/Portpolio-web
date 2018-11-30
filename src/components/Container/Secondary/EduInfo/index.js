@@ -19,7 +19,7 @@ class Education extends Component {
                 year: '(2009-2012)'
             }, {
                 major: intl.formatMessage({ id: 'edu-univ-major' }),
-                school: intl.formatMessage({ id: 'edu-hs-name' }),
+                school: intl.formatMessage({ id: 'edu-univ-name' }),
                 year: '(2012-2018)'
             }]
         };

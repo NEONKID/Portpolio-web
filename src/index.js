@@ -25,11 +25,11 @@ addLocaleData([...en, ...ko]);
 const callback = status => {}
 
 // Your Language
-const lang = navigator.userLanguage;
+const lang = navigator.language;
 
 // If first connect my portpolio
 if(localStorage.getItem('locale') === null) {
-    if(lang === 'ko') {
+    if(lang === 'ko-KR') {
         localStorage.setItem('locale', 'ko');
     } else {
         localStorage.setItem('locale', 'en');
