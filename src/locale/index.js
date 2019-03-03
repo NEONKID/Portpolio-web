@@ -27,7 +27,7 @@ export default {
          */
         'op-title': 'Other Projects',
         'op-A-desc': 'Directions Application for Dankook Univ. in Cheonan, Korea ',
-        'op-B-desc': 'ETL Module for Radiology Image (e.g: CT, MRI, X-ray)',
+        'op-B-desc': 'ETL Module for Radiology Image (e.g: CT, MRI, X-ray), Activity at OHDSI Collaborator',
         'op-C-desc': 'DLUG Chatbot based KakaoTalk (Scheduled to be closed on Dec 31, 2019)',
 
         /**
@@ -116,7 +116,7 @@ export default {
          */
         'op-title': '다른 프로젝트',
         'op-A-desc': '단국대학교 천안캠퍼스 길 안내 애플리케이션',
-        'op-B-desc': '방사선 이미지 ETL 모듈',
+        'op-B-desc': '방사선 이미지 ETL 모듈 (OHDSI 협력 프로젝트)',
         'op-C-desc': 'DLUG Chatbot (2019. 12. 31 서비스 종료 예정)',
 
         /**
