@@ -21,8 +21,8 @@ class CodeWall extends Component {
                 desc: intl.formatMessage({ id: 'op-A-desc'}), 
                 open: true
             }, {
-                title: 'RCDM-ETL',
-                link: '//github.com/neonkid/RCDM-ETL',
+                title: 'Radiology-CDM',
+                link: '//github.com/OHDSI/Radiology-CDM',
                 desc: intl.formatMessage({ id: 'op-B-desc'}),
                 open: true
             }, {

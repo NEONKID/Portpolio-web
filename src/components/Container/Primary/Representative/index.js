@@ -7,9 +7,9 @@ import SubProject from './SubProject';
 
 import OpenPOS from './img/OpenPOS.png';
 import SmartDiary from './img/SmartDiary.png';
+import RCDMViewer from './img/RCDMViewer.png';
 
 class Representative extends Component {
-    
     constructor(props) {
         super(props);
 
@@ -28,6 +28,11 @@ class Representative extends Component {
                 link: '//blog.neonkid.xyz/105',
                 desc: intl.formatMessage({ id: 'rp-sub-B-desc'}),
                 imsrc: SmartDiary
+            }, {
+                title: 'RCDMViewer',
+                link: '//github.com/neonkid/RCDMViewer',
+                desc: intl.formatMessage({ id: 'rp-sub-C-desc'}),
+                imsrc: RCDMViewer
             }]
         };
     }

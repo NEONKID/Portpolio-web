@@ -21,13 +21,14 @@ export default {
         'rp-main-desc-B': 'In my work, I was in charge of the Client Application, and I selected Android as the platform, and implemented the sensor to control the sensors in the house with voice control.',
         'rp-sub-A-desc': 'OpenPOS software for Windows Operating system',
         'rp-sub-B-desc': 'JavaFX-based income / expense based diary program',
+        'rp-sub-C-desc': 'Radiographic image viewer based on Radiology-CDM',
 
         /**
          * Primary Container (CodeWall)
          */
         'op-title': 'Other Projects',
         'op-A-desc': 'Directions Application for Dankook Univ. in Cheonan, Korea ',
-        'op-B-desc': 'ETL Module for Radiology Image (e.g: CT, MRI, X-ray)',
+        'op-B-desc': 'ETL Module for Radiology Image (e.g: CT, MRI, X-ray), Activity at OHDSI Collaborator',
         'op-C-desc': 'DLUG Chatbot based KakaoTalk (Scheduled to be closed on Dec 31, 2019)',
 
         /**
@@ -110,13 +111,14 @@ export default {
         'rp-main-desc-B': '해당 작품에서 저는 Client Application을 담당하였으며 플랫폼으로 Android를 선택하였고, 집 안의 센서들을 버튼으로 제어하는 것과 동시에 음성으로 제어할 수 있도록 구현하였습니다.',
         'rp-sub-A-desc': 'Windows용 공개형 POS 프로그램',
         'rp-sub-B-desc': 'Java기반 수입/지출 기반형 다이어리 프로그램',
+        'rp-sub-C-desc': 'Radiology-CDM에 기반한 방사선 이미지 뷰어',
 
         /**
          * Primary Container (CodeWall)
          */
         'op-title': '다른 프로젝트',
         'op-A-desc': '단국대학교 천안캠퍼스 길 안내 애플리케이션',
-        'op-B-desc': '방사선 이미지 ETL 모듈',
+        'op-B-desc': '방사선 이미지 ETL 모듈 (OHDSI 협력 프로젝트)',
         'op-C-desc': 'DLUG Chatbot (2019. 12. 31 서비스 종료 예정)',
 
         /**
