@@ -1,0 +1,29 @@
+name: Portpolio-react Build
+
+on: [ pull_request ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        - node: [10.x]
+        - os: [ubuntu-latest]
+
+    steps:
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Downloads Checkouts...
+        uses: actions/checkout@v1
+      - name: Portpolio Build...  
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install
+          npm run build --if-present
+      - name: Failure logging comments and report...
+        if: failure()
+        uses: /.github/actions/failure-action
+        
