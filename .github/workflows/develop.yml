@@ -11,7 +11,7 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
