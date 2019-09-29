@@ -24,7 +24,4 @@ jobs:
           npm install
           npm run build-css
           npm run build --if-present
-      #- name: Failure logging comments and report...
-      #  if: failure()
-      #  uses: /.github/actions/failure-action
         
