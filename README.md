@@ -1,6 +1,6 @@
 # Portpolio for Neon K.I.D
 
-[![Build Status](https://travis-ci.org/NEONKID/Portpolio-react.svg?branch=master)](https://travis-ci.org/NEONKID/Portpolio-react)
+[![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Portpolio-react%20Deploy%20in%20Firebase)](https://github.com/NEONKID/Portpolio-react/actions)
 
 This repository is my portfolio repository. Used React.js library was developed based SPA
 
