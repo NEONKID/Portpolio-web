@@ -18,8 +18,6 @@ jobs:
       - name: Downloads Checkouts...
         uses: actions/checkout@v1
       - name: Portpolio Build...  
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
           npm run build-css
