@@ -1,4 +1,4 @@
-name: Portpolio-react Deploy in Firebase
+name: Deploy
 
 on:
   push:
