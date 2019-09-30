@@ -14,12 +14,12 @@ jobs:
         - os: [ubuntu-latest]
 
     steps:
+      - uses: actions/checkout@v1
       - name: Set up Node.js ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: Downloads Checkouts...
-        uses: actions/checkout@v1
+      - name: Build SASS -> CSS
         run: |
           npm install
           npm run build-css
