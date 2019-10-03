@@ -22,6 +22,7 @@ jobs:
       - name: Build SASS -> CSS
         run: |
           npm install
+          cp -rf config/webpack.config.prod.js node_modules/react-scripts/config/webpack.config.prod.js
           npm run build-css
           npm run build --if-present
       - name: Deploy Firebase
@@ -29,5 +30,4 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           npm -g install firebase-tools
-          cp -rf config/webpack.config.prod.js node_modules/react-scripts/config/webpack.config.prod.js
           firebase deploy --token $FIREBASE_TOKEN --non-interactive
