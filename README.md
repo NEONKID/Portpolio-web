@@ -1,6 +1,6 @@
 # Portpolio for Neon K.I.D
 
-[![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Deploy)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
+[![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Deploy/badge.svg)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
 
 This repository is my portfolio repository. Used React.js library was developed based SPA
 
