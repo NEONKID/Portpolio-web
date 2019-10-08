@@ -18,11 +18,11 @@ const config = {
     google: {
         families: ['Lato:300,400,300italic,400italic', 'Montserrat:400,700']
     }
-}
+};
 
 addLocaleData([...en, ...ko]);
 
-const callback = status => {}
+const callback = status => {};
 
 // Your Language
 const lang = navigator.language;
