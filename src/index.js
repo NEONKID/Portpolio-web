@@ -14,6 +14,8 @@ import './index.css';
 import App from './components/App';
 import locale from './locale';
 
+import * as serviceWorker from './serviceWorker';
+
 const config = {
     google: {
         families: ['Lato:300,400,300italic,400italic', 'Montserrat:400,700']
@@ -46,3 +48,5 @@ render(
     </BrowserRouter>,
     document.getElementById('root')
 );
+
+serviceWorker.register();
