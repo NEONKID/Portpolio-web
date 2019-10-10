@@ -1,15 +1,15 @@
 {
-    "short_name": "PF-N.K",
-    "name": "Portfolio for Neon K.I.D",
-    "icons": [
-        {
-            "src": "favicon.ico",
-            "size": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-        }
-    ],
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+	"short_name": "N.K",
+	"name": "Neon K.I.D HOME PAGE",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"size": "64x64 32x32 24x24 16x16",
+			"type": "image/x-icon"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
 }
