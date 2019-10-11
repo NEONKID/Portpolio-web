@@ -1,7 +1,9 @@
 import React from 'react';
 import WebFont from 'webfontloader';
+
+import { Provider } from 'mobx-react';
 import { render } from 'react-dom';
-import { IntlProvider } from 'react-intl';
+import { resumeStore } from './stores/resumeStore';
 
 import App from './components/App';
 
@@ -14,9 +16,9 @@ WebFont.load({
 });
 
 render(
-	<IntlProvider locale="en">
+	<Provider store={resumeStore}>
 		<App />
-	</IntlProvider>,
+	</Provider>,
 	document.getElementById('root'),
 );
 
