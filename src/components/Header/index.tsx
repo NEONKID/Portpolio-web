@@ -11,6 +11,8 @@ import './styles.css';
 	blogState: stores.store.blogState,
 	contactState: stores.store.contactState,
 	closeBtnClick: stores.store.closeBtnClick,
+	showResumeContent: stores.store.showResumeContent,
+	showPortfolioContent: stores.store.showPortfolioContent,
 }))
 @observer
 class Header extends Component {
@@ -28,36 +30,56 @@ class Header extends Component {
 			blogState,
 			contactState,
 			closeBtnClick,
+			showResumeContent,
+			showPortfolioContent,
 		}: any = this.props;
 
-		const rootStyle = menuItemState
-			? 'inline-header showx'
-			: 'inline-header';
-
-		const resumeStyle = resumeState
-			? 'resume menu-item active'
-			: 'resume menu-item';
-
-		const portfolioStyle = portfolioState
-			? 'portfolio menu-item active'
-			: 'portfolio menu-item';
-
-		const blogStyle = blogState
-			? 'blog menu-item active'
-			: 'blog menu-item';
-
-		const contactStyle = contactState
-			? 'contact menu-item active'
-			: 'contact menu-item';
-
 		return (
-			<div className={rootStyle}>
+			<div
+				className={
+					menuItemState ? 'inline-header showx' : 'inline-header'
+				}
+			>
 				<span className="status">Neon K.I.D</span>
 				<ul className="inline-header-menu">
-					<li className={resumeStyle}>Resume</li>
-					<li className={portfolioStyle}>Portfolio</li>
-					<li className={blogStyle}>Blog</li>
-					<li className={contactStyle}>Contact</li>
+					<li
+						className={
+							resumeState
+								? 'resume menu-item active'
+								: 'resume menu-item'
+						}
+						onClick={showResumeContent}
+					>
+						Resume
+					</li>
+					<li
+						className={
+							portfolioState
+								? 'portfolio menu-item active'
+								: 'portfolio menu-item'
+						}
+						onClick={showPortfolioContent}
+					>
+						Portfolio
+					</li>
+					<li
+						className={
+							blogState
+								? 'blog menu-item active'
+								: 'blog menu-item'
+						}
+					>
+						Blog
+					</li>
+					<li
+						className={
+							contactState
+								? 'contact menu-item active'
+								: 'contact menu-item'
+						}
+					>
+						Contact
+					</li>
 					<li
 						id="close"
 						className="menu-item"
