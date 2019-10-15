@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 
 WebFont.load({
 	google: {
-		families: ['Poppins Web:300,400,500,600,700', 'sans-serif'],
+		families: ['Poppins:300,400,500,600,700', 'sans-serif'],
 	},
 });
 
