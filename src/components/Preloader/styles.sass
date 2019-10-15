@@ -1,0 +1,58 @@
+/* ======= preloader ======= */
+.preloader
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    z-index: 999999
+    background: transparent
+
+    & .anim
+        color: #FFF
+        font-size: 60px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.pulse
+    -webkit-animation-duration: 1s
+    animation-duration: 1s
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    -webkit-animation-iteration-count: infinite
+    animation-iteration-count: infinite
+    -webkit-animation-name: pulse
+    animation-name: pulse
+
+@-webkit-keyframes pulse
+    0%
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+    50%
+    -webkit-transform: scale3d(1.05, 1.05, 1.05)
+    transform: scale3d(1.05, 1.05, 1.05)
+
+    100%
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+@keyframes pulse
+    0%
+        -webkit-transform: scale3d(1, 1, 1)
+        -ms-transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1)
+
+    50%
+        -webkit-transform: scale3d(1.05, 1.05, 1.05)
+        -ms-transform: scale3d(1.05, 1.05, 1.05)
+        transform: scale3d(1.05, 1.05, 1.05)
+
+    100%
+        -webkit-transform: scale3d(1, 1, 1)
+        -ms-transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1)
