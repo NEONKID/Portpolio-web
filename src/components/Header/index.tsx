@@ -11,6 +11,8 @@ import './styles.css';
 	blogState: stores.store.blogState,
 	contactState: stores.store.contactState,
 	closeBtnClick: stores.store.closeBtnClick,
+	showBlogContent: stores.store.showBlogContent,
+	showContact: stores.store.showContact,
 	showResumeContent: stores.store.showResumeContent,
 	showPortfolioContent: stores.store.showPortfolioContent,
 }))
@@ -30,61 +32,38 @@ class Header extends Component {
 			blogState,
 			contactState,
 			closeBtnClick,
+			showBlogContent,
+			showContact,
 			showResumeContent,
 			showPortfolioContent,
 		}: any = this.props;
 
 		return (
-			<div
-				className={
-					menuItemState ? 'inline-header showx' : 'inline-header'
-				}
-			>
+			<div className={menuItemState ? 'inline-header showx' : 'inline-header'}>
 				<span className="status">Neon K.I.D</span>
 				<ul className="inline-header-menu">
 					<li
-						className={
-							resumeState
-								? 'resume menu-item active'
-								: 'resume menu-item'
-						}
+						className={resumeState ? 'resume menu-item active' : 'resume menu-item'}
 						onClick={showResumeContent}
 					>
 						Resume
 					</li>
 					<li
-						className={
-							portfolioState
-								? 'portfolio menu-item active'
-								: 'portfolio menu-item'
-						}
+						className={portfolioState ? 'portfolio menu-item active' : 'portfolio menu-item'}
 						onClick={showPortfolioContent}
 					>
 						Portfolio
 					</li>
-					<li
-						className={
-							blogState
-								? 'blog menu-item active'
-								: 'blog menu-item'
-						}
-					>
+					<li className={blogState ? 'blog menu-item active' : 'blog menu-item'} onClick={showBlogContent}>
 						Blog
 					</li>
 					<li
-						className={
-							contactState
-								? 'contact menu-item active'
-								: 'contact menu-item'
-						}
+						className={contactState ? 'contact menu-item active' : 'contact menu-item'}
+						onClick={showContact}
 					>
 						Contact
 					</li>
-					<li
-						id="close"
-						className="menu-item"
-						onClick={closeBtnClick}
-					>
+					<li id="close" className="menu-item" onClick={closeBtnClick}>
 						<i className="ion-ios-close-empty"></i>
 					</li>
 				</ul>

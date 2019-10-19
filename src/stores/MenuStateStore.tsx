@@ -7,6 +7,18 @@ export class MenuStateStore {
 	@observable portfolioState = false;
 	@observable resumeState = false;
 	@observable nameCardReverse = false;
+	@observable popupState = false;
+
+	@action showBlogContent = () => {
+		this.blogState = true;
+		this.menuItemState = true;
+		this.nameCardReverse = true;
+
+		this.resumeState = false;
+		this.contactState = false;
+		this.portfolioState = false;
+		this.popupState = false;
+	};
 
 	@action showResumeContent = () => {
 		this.resumeState = true;
@@ -16,6 +28,7 @@ export class MenuStateStore {
 		this.blogState = false;
 		this.contactState = false;
 		this.portfolioState = false;
+		this.popupState = false;
 	};
 
 	@action showPortfolioContent = () => {
@@ -26,6 +39,26 @@ export class MenuStateStore {
 		this.blogState = false;
 		this.contactState = false;
 		this.resumeState = false;
+		this.popupState = false;
+	};
+
+	@action showContact = () => {
+		this.contactState = true;
+		this.menuItemState = true;
+		this.nameCardReverse = true;
+
+		this.blogState = false;
+		this.portfolioState = false;
+		this.resumeState = false;
+		this.popupState = false;
+	};
+
+	@action showPopupContent = () => {
+		this.popupState = true;
+	};
+
+	@action closePopClick = () => {
+		this.popupState = false;
 	};
 
 	@action closeBtnClick = () => {
@@ -35,6 +68,7 @@ export class MenuStateStore {
 		this.contactState = false;
 		this.portfolioState = false;
 		this.resumeState = false;
+		this.popupState = false;
 	};
 }
 
