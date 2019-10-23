@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Dankook Univ.",
+		"pos": "Computer Science",
+		"start": "Mar 2012",
+		"end": "Feb 2017",
+		"info": "Majored in Computer Science and completed required data structures, algorithms, operating system, computer network, and completed various programming subjects such as Android, JavaFX, and MFC."
+	},
+	{
+		"name": "Information High School",
+		"pos": "Information Processing Dept.",
+		"start": "Mar 2009",
+		"end": "Feb 2012",
+		"info": "Majored in Information Processing and completed the first data processing in Excel. Finally, I studied Visual Basic language and completed the basics of software development."
+	}
+]
