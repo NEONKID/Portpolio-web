@@ -1,0 +1,250 @@
+/* ======= Name Block ======= */
+
+.name-block
+    position: absolute
+    width: 700px
+    height: 700px
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    display: table
+    transition: all 0.5s
+    z-index: 1
+
+    .dark &
+        border: 1px solid rgba(51, 51, 51, 0.4)
+
+    &.reverse
+        position: absolute
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        width: 30%
+        height: 100%
+        left: 0
+        top: 0
+        border: none
+        display: table
+
+.menu2
+    & .name-block
+        border: none
+        padding: 0 0 0 50px
+
+    & .name-block.reverse
+        width: 100%
+
+.menu4 .name-block.reverse
+    width: 100%
+    padding-left: 50px
+
+.name-block-container
+    display: table-cell
+    vertical-align: middle
+    padding-left: 240px
+    -ms-transform: rotate(34deg)
+    -webkit-transform: rotate(34deg)
+    transform: rotate(34deg)
+
+    &.reverse
+        display: table-cell
+        height: 100%
+        vertical-align: middle
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        padding: 0 30px
+
+    & h1,
+    & h2
+        /*text-transform: capitalize*/
+        font-weight: 700
+        color: #FFF
+        margin-bottom: 10px
+        text-transform: uppercase
+
+    .darkh1, &
+    .darkh2 &
+        color: #333
+
+    & h2
+        font-size: 26px
+        min-height: 26px
+
+    & h1 span
+        font-size: 26px
+        font-weight: 300
+        display: block
+        text-transform: capitalize
+
+.social
+    position: absolute
+    bottom: 15%
+
+    & li
+        display: inline-block
+        margin-right: 2px
+        text-align: center
+
+    & a
+        border: 2px solid #FFF
+        color: #FFF
+        display: inline-block
+        height: 35px
+        width: 35px
+        transition: all 0.5s
+
+    & li i
+        line-height: 32px
+        font-size: 12px
+
+    & a:hover
+        background-color: rgba(255, 255, 255, 0.7)
+        border: 2px solid transparent
+        color: #333
+
+    .darka &
+        border: 2px solid #333
+        color: #333
+
+.typed-cursor
+    display: none
+
+/* ======= Responsive ======= */
+
+@media (min-width:1920px)
+    .name-block
+        -ms-transform: rotate(-34deg)
+        -webkit-transform: rotate(-34deg)
+        transform: rotate(-34deg)
+        left: 122px
+        top: 90px
+
+        &.reverse
+            width: 400px
+            left: 300px
+
+@media (min-width:1280px) and (max-width:1919px)
+    .name-block
+        -ms-transform: rotate(-34deg)
+        -webkit-transform: rotate(-34deg)
+        transform: rotate(-34deg)
+        left: -190px
+        top: 10px
+
+@media (min-width:1025px) and (max-width:1280px)
+    .name-block
+        -ms-transform: rotate(-34deg)
+        -webkit-transform: rotate(-34deg)
+        transform: rotate(-34deg)
+        left: -200px
+        top: -80px
+
+@media (min-width:981px) and (max-width:1024px)
+    .name-block
+        -ms-transform: rotate(-34deg)
+        -webkit-transform: rotate(-34deg)
+        transform: rotate(-34deg)
+        left: -190px
+        top: 10px
+
+@media (max-width:1024px)
+    .name-block-container
+        & h1
+            font-size: 40px
+            line-height: 1.1
+
+        & h1 span,
+        & h2
+            font-size: 22px
+            min-height: 22px
+
+        .menu2 & h1
+            font-size: 50px
+
+        .menu2 & h1 span,
+        .menu2 & h2
+            font-size: 26px
+            min-height: 26px
+
+    .menu2
+        & .name-block
+            padding: 0 0 0 20px
+
+        & .name-block-container
+
+@media (min-width:768px) and (max-width:980px)
+    .name-block
+        -ms-transform: rotate(-34deg)
+        -webkit-transform: rotate(-34deg)
+        transform: rotate(-34deg)
+        left: -190px
+        top: 10px
+
+@media (max-width:800px) and (orientation:landscape)
+    .name-block
+        position: relative
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        width: 100%
+        height: auto
+        border: none
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+        display: table
+        left: 0
+        top: 0
+
+    .name-block-container
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        padding: 0 0 0 0
+
+    .social
+        position: relative
+        margin: 50px 0
+
+@media (max-width:800px)
+    .name-block
+        padding-top: 30px
+        position: relative
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        width: 100%
+        height: auto
+        border: none
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+        display: table
+        left: 0
+        top: 0
+
+    .name-block-container,
+        -ms-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+        padding: 0 0 0 0
+
+    .social
+        position: relative
+        margin: 50px 0
+
+    .menu4 .social
+        bottom: 0
+
+@media (max-width:767px)
+    .name-block.reverse
+        padding-left: 0
+
+    .name-block-container
+        & h1
+            font-size: 36px
+
+        & h2
+            font-size: 22px
+            min-height: 22px
+
+        & h1 span
+            font-size: 22px
+
+    .social
+        display: none
