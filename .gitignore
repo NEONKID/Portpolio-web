@@ -31,3 +31,6 @@ yarn.lock
 
 # firebase
 .firebase/*
+
+# React app Environment references
+react-app-env.d.ts
