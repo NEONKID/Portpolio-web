@@ -53,14 +53,6 @@ export class MenuStateStore {
 		this.popupState = false;
 	};
 
-	@action showPopupContent = () => {
-		this.popupState = true;
-	};
-
-	@action closePopClick = () => {
-		this.popupState = false;
-	};
-
 	@action closeBtnClick = () => {
 		this.menuItemState = false;
 		this.nameCardReverse = false;
