@@ -34,3 +34,6 @@ yarn.lock
 
 # React app Environment references
 react-app-env.d.ts
+
+# other json ignore
+*.json
