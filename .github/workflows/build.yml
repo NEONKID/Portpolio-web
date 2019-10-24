@@ -1,27 +1,32 @@
 name: Build
 
 on:
-  pull_request:
-    branches:
-      - master
+    pull_request:
+        branches:
+            - master
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: [10.x]
-        os: [ubuntu-latest]
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                node: [10.x]
+                os: [ubuntu-latest]
 
-    steps:
-      - name: Set up Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Downloads Checkouts...
-        uses: actions/checkout@v1
-      - name: Portpolio Build...
-        run: |
-          npm install
-          npm run build:css
-          npm run build
+        steps:
+            - name: Set up Node.js ${{ matrix.node }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node }}
+            - name: Downloads Checkouts...
+              uses: actions/checkout@v1
+            - name: Create Firebase Configuration for Neon K.I.D
+              env:
+                  FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+              run: |
+                  echo $FIREBASE_CONFIG > src/components/Server/config.json
+            - name: Portpolio Build...
+              run: |
+                  npm install
+                  npm run build:css
+                  npm run build
