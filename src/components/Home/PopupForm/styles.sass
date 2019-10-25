@@ -1,0 +1,76 @@
+/*==== Content Popup Form ====*/
+
+.content-blocks.pop
+    left: 100%
+    opacity: 0.3
+    top: 0
+    transition: all 0.3s ease-out
+
+    &.showx
+        left: 30%
+        opacity: 1
+
+    .menu4 &.showx
+        left: 20%
+
+    & .content
+        padding-top: 110px
+
+.close-pop
+    background-color: #F1F3F6
+    cursor: pointer
+    line-height: 40px
+    height: 40px
+    position: fixed
+    text-align: center
+    width: 69%
+    right: 13px
+    top: -60px
+    transition: all 0.7s
+    z-index: 1
+
+.float-left
+    float: left!important
+
+.float-right
+    float: right!important
+
+.project-description
+    margin: 30px 0
+
+.project-head
+    & span
+        color: #333
+        font-weight: 400
+        margin-right: 5px
+
+.project-nav
+    margin-top: 50px
+
+    & a
+        color: inherit
+        font-weight: 500
+
+    & i
+        font-size: 24px
+
+@media (max-width: 1280px)
+    .close-pop
+        right: 0
+        width: 70%
+
+@media (max-width:800px)
+    .menu4 .content-blocks.pop
+        left: 100%
+
+    .content-blocks.pop.showx
+        left: 0
+
+    .close-pop
+        right: 0
+        width: 100%
+
+@media (max-width: 767px)
+    .content-blocks.pop.showx
+        height: 100vh
+        top: 0
