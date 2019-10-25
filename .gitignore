@@ -37,3 +37,6 @@ react-app-env.d.ts
 
 # other json ignore
 *.json
+
+# Static
+static/*

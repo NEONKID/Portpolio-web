@@ -36,18 +36,18 @@ class Name extends Component {
 					</h2>
 					<ul className="social">
 						<li>
-							<a>
-								<i className="ion-social-facebook"></i>
+							<a href="//fb.com/NK.4869">
+								<i className="ion-logo-facebook"></i>
 							</a>
 						</li>
 						<li>
-							<a>
-								<i className="ion-social-twitter"></i>
+							<a href="//twitter.com/clax1412">
+								<i className="ion-logo-twitter"></i>
 							</a>
 						</li>
 						<li>
-							<a>
-								<i className="ion-social-linkedin"></i>
+							<a href="//linkedin.com/in/kwang-soo-jeong-536b3117b/">
+								<i className="ion-logo-linkedin"></i>
 							</a>
 						</li>
 					</ul>

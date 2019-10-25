@@ -79,11 +79,6 @@
     position: absolute
     bottom: 15%
 
-    & li
-        display: inline-block
-        margin-right: 2px
-        text-align: center
-
     & a
         border: 2px solid #FFF
         color: #FFF
@@ -92,9 +87,14 @@
         width: 35px
         transition: all 0.5s
 
-    & li i
-        line-height: 32px
-        font-size: 12px
+    & li
+        display: inline-block
+        margin-right: 5px
+        text-align: center
+
+        & i
+            line-height: 32px
+            font-size: 15px
 
     & a:hover
         background-color: rgba(255, 255, 255, 0.7)
@@ -107,6 +107,10 @@
 
 .typed-cursor
     display: none
+
+ul
+    margin-top: 0
+    margin-bottom: 1rem
 
 /* ======= Responsive ======= */
 
