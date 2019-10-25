@@ -18,7 +18,7 @@ const Profile = () => {
 				<ColInfo title="Name" content="Kwang Soo Jeong" />
 				<ColInfo title="Date of birth" content="August 25, 1993" />
 				<ColInfo title="E-mail" content="contact@neonkid.xyz" />
-				<ColInfo title="Hangouts" content="@clax1412" />
+				<ColInfo title="Skype" content="@clax1412" />
 			</div>
 		</div>
 	);

@@ -64,7 +64,7 @@ class Header extends Component {
 						Contact
 					</li>
 					<li id="close" className="menu-item" onClick={closeBtnClick}>
-						<i className="ion-ios-close-empty"></i>
+						<i className="ion-ios-close"></i>
 					</li>
 				</ul>
 			</div>

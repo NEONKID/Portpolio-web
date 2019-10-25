@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Timeline from '../Timeline';
+
 import './styles.css';
 
 const Experience = () => {
