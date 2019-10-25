@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 import './styles.css';
 
@@ -7,27 +8,29 @@ type TLBProps = {
 	name: string;
 	pos: string;
 	start: string;
-	end: string;
+	end?: string;
 	info: string;
 };
 
 const TLBlock = ({ category, name, pos, start, end, info }: TLBProps) => {
-	let cName, pName;
+	let cName, pName, format;
 	switch (category) {
 		case 'experience':
 			pName = <span>{pos}</span>;
 			cName = ' @ ' + name;
+			format = 'MMMM DD YYYY';
 			break;
 
 		case 'education':
 			pName = pos + ' | ';
 			cName = <span>{name}</span>;
+			format = 'MMMM YYYY';
 			break;
 	}
 
 	let wTime;
 	switch (end) {
-		case 'Present':
+		case null:
 			wTime = <span className="current">Present</span>;
 			break;
 
@@ -43,7 +46,7 @@ const TLBlock = ({ category, name, pos, start, end, info }: TLBProps) => {
 					{pName} {cName}
 				</h4>
 				<h5>
-					{start} - {wTime}
+					<Moment format={format}>{start}</Moment> - <Moment format={format}>{wTime}</Moment>
 				</h5>
 			</div>
 			<p>{info}</p>

@@ -1,9 +1,0 @@
-[
-	{
-		"name": "Ajou University Hospital",
-		"pos": "Software Engineer",
-		"start": "July 1, 2018",
-		"end": "June 30, 2019",
-		"info": "The company has been responsible for the radiographic image processing, developing joint research radiographic data models from multiple organizations and contributing to the OHDSI organization. I also developed a radiographic image viewer and feature extraction machine learning model based on the model. In addition, I developed ovarian cancer classification machine learning model and genome mutation classification model using genome images."
-	}
-]

@@ -18,9 +18,7 @@ import './styles.css';
 class ResumeContent extends Component {
 	render() {
 		const { resumeState }: any = this.props;
-		const style = resumeState!
-			? 'content-blocks resume showx'
-			: 'content-blocks resume';
+		const style = resumeState! ? 'content-blocks resume showx' : 'content-blocks resume';
 
 		return (
 			<div className={style}>

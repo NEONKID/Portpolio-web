@@ -1,11 +1,12 @@
 import React from 'react';
+import { firestore } from 'firebase';
 
 import TLBlock from './TLBlock';
 import './styles.css';
 
 type TLProps = {
 	category: string;
-	details: Array<any>;
+	details: Array<firestore.QueryDocumentSnapshot>;
 };
 
 const Timeline = ({ category, details }: TLProps) => {
@@ -20,11 +21,11 @@ const Timeline = ({ category, details }: TLProps) => {
 							return (
 								<TLBlock
 									category={category}
-									name={exp.name}
-									pos={exp.pos}
-									start={exp.start}
-									end={exp.end}
-									info={exp.info}
+									name={exp.data().name}
+									pos={exp.data().pos}
+									start={exp.data().start.toDate()}
+									end={exp.data().end.toDate()}
+									info={exp.data().info}
 									key={i}
 								/>
 							);
