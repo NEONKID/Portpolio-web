@@ -24,7 +24,7 @@ jobs:
               env:
                   FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
               run: |
-                  echo $FIREBASE_CONFIG > src/components/Server/config.json
+                  echo $FIREBASE_CONFIG > ~/work/Portpolio-react/Portpolio-react/src/components/Server/config.json
             - name: Portpolio Build...
               run: |
                   npm install
