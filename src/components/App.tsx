@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Provider } from 'mobx-react';
 
 import Preloader from './Preloader';
@@ -8,19 +8,18 @@ import Home from './Home';
 
 import { MenuStateStore } from '../stores/MenuStateStore';
 import './App.css';
-import './ionicons-min.css';
 
 const App = () => {
 	const menuStore = new MenuStateStore();
 
 	return (
 		<Provider store={menuStore}>
-			<div>
+			<Fragment>
 				<Preloader />
 				<Slider />
 				<Header />
 				<Home />
-			</div>
+			</Fragment>
 		</Provider>
 	);
 };
