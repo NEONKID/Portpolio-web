@@ -12,7 +12,7 @@ const PopupForm = () => {
 			$('.inline-header').addClass('showx');
 			$('.content-blocks.pop section').empty();
 		});
-	});
+	}, []);
 
 	return (
 		<div className="content-blocks pop">

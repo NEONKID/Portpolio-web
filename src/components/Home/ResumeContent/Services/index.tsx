@@ -20,12 +20,7 @@ const Services = () => {
 			<div className="row">
 				{serviceList.map((service, i) => {
 					return (
-						<ServiceDetails
-							icon={service.icon}
-							title={service.title}
-							content={service.content}
-							key={i}
-						/>
+						<ServiceDetails icon={service.icon} title={service.title} content={service.content} key={i} />
 					);
 				})}
 			</div>

@@ -8,8 +8,7 @@ type skillProps = {
 };
 
 const SkillItem = ({ name, year }: skillProps) => {
-	const yearComment =
-		year > 1 ? year + ' years experience' : year + ' year experience';
+	const yearComment = year > 1 ? year + ' years experience' : year + ' year experience';
 
 	return (
 		<label className="progress-bar-label">
