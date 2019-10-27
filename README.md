@@ -2,17 +2,17 @@
 
 [![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Deploy/badge.svg)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
 
-This repository is my portfolio repository. Used React.js library was developed based SPA
+This repository is my portfolio repository. Used React + Typescript was developed based PWA
 
 <br />
 
 ## Build CSS (Required)
 
 ```
-$ yarn build-css
+$ yarn build:css
 ```
 
-This is a command that changes the scss code to css.
+This is a command that changes the sass code to css.
 
 <br />
 
@@ -35,4 +35,4 @@ $ yarn start
 
 ## Credit
 
-Designed by. Xiaoying Riley
+Created by. Neon K.I.D

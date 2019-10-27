@@ -1,0 +1,64 @@
+/* ======= Resume Block ======= */
+@import "../_mixins.sass"
+
+.resume-block
+    @include block(430px, 300px, 99)
+
+    .dark &
+        border: 1px solid rgba(51, 51, 51, 0.4)
+
+    &:hover
+        border: 15px solid rgba(255, 255, 255, 0.1)
+
+    &-container
+        display: table-cell
+        vertical-align: middle
+        padding: 150px 0 0 70px
+        -ms-transform: rotate(34deg)
+        -webkit-transform: rotate(34deg)
+        transform: rotate(34deg)
+
+/* ======= Responsive ======= */
+@media (min-width:1920px)
+    .resume-block
+        @include resblock(702px, -60px, -34deg)
+
+@media (min-width:1280px) and (max-width:1919px)
+    .resume-block
+        @include resblock(382px, -151px, -34deg)
+
+@media (min-width:1025px) and (max-width:1280px)
+    .resume-block
+        @include resblock(419px, -160px, -34deg, 350px, 300px)
+
+@media (min-width:981px) and (max-width:1024px)
+    .resume-block
+        @include resblock(382px, -150px, -34deg)
+
+@media (min-width:768px) and (max-width:980px)
+    .resume-block
+        @include resblock(382px, -150px, -34deg)
+
+@media (max-width:800px) and (orientation:landscape)
+    .resume-block
+        @include resblock(0, 0, 0deg, 100%, auto, 'tablet-landscape')
+
+        &-container
+            -ms-transform: rotate(0deg)
+            -webkit-transform: rotate(0deg)
+            transform: rotate(0deg)
+            padding: 0 0 0 0
+
+@media (max-width:800px)
+    .resume-block
+        @include resblock(0, 0, 0deg, 100%, auto, 'tablet')
+
+        &-container
+            -ms-transform: rotate(0deg)
+            -webkit-transform: rotate(0deg)
+            transform: rotate(0deg)
+            padding: 0 0 0 0
+
+        &:hover
+            border: none
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5)

@@ -1,0 +1,184 @@
+/* ======= Main Page ======= */
+.home
+    width: 100%
+    height: 100vh
+    position: fixed
+    overflow: hidden
+    background-size: cover
+    z-index: 0
+
+    &.img-bg
+        background: black url(https://storage.googleapis.com/nk-project-8ec03.appspot.com/NKHOME/images/bg.jpg)
+        background-size: cover
+
+    & .bgScroll
+        animation: 40s linear 0s normal none infinite running bgScroll
+        background: black url(https://storage.googleapis.com/nk-project-8ec03.appspot.com/NKHOME/images/bg.jpg) repeat scroll center top
+
+.bgScroll
+    height: 400%
+    position: absolute
+    width: 100%
+    z-index: -1
+
+.container
+    margin-right: auto
+    margin-left: auto
+    padding-right: 15px
+    padding-left: 15px
+    width: 100%
+
+/* ======= Content Blocks ======= */
+.block-content
+    margin: 0 0 70px
+    overflow: hidden
+
+.block-title
+    font-size: 24px
+    text-transform: uppercase
+    color: #333
+    padding-bottom: 15px
+    border-bottom: 1px solid #ddd
+    margin-bottom: 30px
+    font-weight: 600
+
+.content
+    position: relative
+    padding: 120px 70px 30px
+    height: auto
+    overflow: hidden
+
+.content-blocks
+    position: fixed
+    width: 70%
+    height: 100vh
+    opacity: 0.5
+    overflow-x: hidden
+    overflow-y: scroll
+    top: 100%
+    left: 30%
+    background: #FFF
+    transition: opacity 0.7s ease-out
+    z-index: 1
+    -webkit-overflow-scrolling: touch
+
+    &.showx
+        opacity: 1
+        top: 0
+
+    .menu5 &
+        width: 80%
+        left: 20%
+
+.row
+    display: -ms-flexbox
+    display: flex
+    flex-wrap: wrap
+
+@-webkit-keyframes bgScroll
+    0%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+
+    100%
+    -webkit-transform: translateY(-1934px)
+    transform: translateY(-1934px)
+
+@keyframes bgScroll
+    0%
+        -webkit-transform: translateY(0)
+        transform: translateY(0)
+
+    100%
+        -webkit-transform: translateY(-1934px)
+        transform: translateY(-1934px)
+
+.overlay
+    background-color: rgba(0, 0, 0, 1)
+    height: 100%
+    position: fixed
+    width: 100%
+
+    &.light
+        background-color: rgba(255, 255, 255, 1)
+
+.gradient-overlay1
+    background: #EB3349
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349)
+    background: linear-gradient(to right, #F45C43, #EB3349)
+    height: 100%
+    position: fixed
+    width: 100%
+
+.gradient-overlay2
+    background: #4568DC
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC)
+    background: linear-gradient(to right, #B06AB3, #4568DC)
+    height: 100%
+    position: fixed
+    width: 100%
+
+.gradient-overlay3
+    background: #556270
+    background: -webkit-linear-gradient(to right, #FF6B6B, #556270)
+    background: linear-gradient(to right, #FF6B6B, #556270)
+    height: 100%
+    position: fixed
+    width: 100%
+
+/* ======= Responsive ======= */
+@media (min-width:1920px)
+    .content-blocks,
+    .content-blocks.pop.showx,
+    .inline-menu-container,
+    .close-pop
+        width: 1024px
+        left: auto
+        right: 0
+
+@media (min-width: 1200px)
+    .container
+        max-width: 1140px
+
+@media (max-width: 1024px)
+    .content
+        padding: 120px 50px 50px
+
+@media (min-width: 992px)
+    .container
+        max-width: 960px
+
+@media (max-width: 800px) and (orientation:landscape)
+    .home
+        background: url(https://storage.googleapis.com/nk-project-8ec03.appspot.com/NKHOME/images/bg.jpg) #333 30% 30%
+        overflow-y: scroll
+
+    .content-blocks
+        height: 100vh
+
+@media (max-width: 800px)
+    .content-blocks
+        width: 100%
+        left: 0
+
+@media (min-width: 576px)
+    .container
+        max-width: 540px
+
+@media (max-width:767px)
+    .home
+        overflow-y: scroll
+
+        .bgScroll &
+            /* animation: none */
+            height: 100%
+
+    .content
+        padding: 100px 20px 50px
+
+@media (max-width:375px)
+    .home
+        position: relative
+
+        .menu4 &
+            height: 100vh
