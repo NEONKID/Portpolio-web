@@ -11,7 +11,10 @@ const Experience = () => {
 
 	useEffect(() => {
 		const db = FB.firestore();
+		const locale = localStorage.getItem('locale') || 'en';
+
 		db.collection('exp')
+			.where('lang', '==', locale)
 			.get()
 			.then(snapshot => {
 				if (!snapshot.empty) setExp(snapshot.docs);

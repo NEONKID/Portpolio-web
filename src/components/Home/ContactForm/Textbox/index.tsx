@@ -5,35 +5,11 @@ type tbProps = {
 	id: string;
 	placeholder: string;
 	name: string;
-	lengthHelp?: Record<string, string>;
-	emptyHelp?: Record<string, string>;
+	minLength: number;
+	error: string;
 };
 
-const Textbox = ({ type, id, placeholder, name, lengthHelp, emptyHelp }: tbProps) => {
-	const lengthHelpBlock =
-		lengthHelp != null ? (
-			<small
-				className="help-block"
-				data-bv-validator="stringLength"
-				data-bv-for={name}
-				data-bv-result="NOT VALIDATED"
-			>
-				{lengthHelp['message']}
-			</small>
-		) : null;
-
-	const emptyHelpBlock =
-		emptyHelp != null ? (
-			<small
-				className="help-block"
-				data-bv-validator="notEmpty"
-				data-bv-for={name}
-				data-bv-result="NOT VALIDATED"
-			>
-				{emptyHelp['message']}
-			</small>
-		) : null;
-
+const Textbox = ({ type, id, placeholder, name, minLength, error }: tbProps) => {
 	return (
 		<Fragment>
 			<input
@@ -42,10 +18,11 @@ const Textbox = ({ type, id, placeholder, name, lengthHelp, emptyHelp }: tbProps
 				id={id}
 				placeholder={placeholder}
 				name={name}
-				data-bv-field={name}
+				data-minlength={minLength}
+				data-error={error}
+				required
 			/>
-			{lengthHelpBlock}
-			{emptyHelpBlock}
+			<small className="help-block with-errors"></small>
 		</Fragment>
 	);
 };

@@ -6,15 +6,15 @@ import * as Inject from '../../../stores/MenuStateStore';
 import './styles.css';
 
 @inject((stores: Inject.Props) => ({
-	menuItemState: stores.store.menuItemState,
+	nameCardReverse: stores.store.nameCardReverse,
 }))
 @observer
 class Name extends Component {
 	render() {
-		const { menuItemState }: any = this.props;
+		const { nameCardReverse }: any = this.props;
 
-		const blockStyle = menuItemState ? 'name-block reverse' : 'name-block';
-		const conStyle = menuItemState ? 'name-block-container reverse' : 'name-block-container';
+		const blockStyle = nameCardReverse ? 'name-block reverse' : 'name-block';
+		const conStyle = nameCardReverse ? 'name-block-container reverse' : 'name-block-container';
 
 		return (
 			<div className={blockStyle}>

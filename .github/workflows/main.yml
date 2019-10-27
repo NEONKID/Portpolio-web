@@ -19,6 +19,11 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node }}
+            - name: Create Firebase Configuration for Neon K.I.D
+              env:
+                  FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+              run: |
+                  echo $FIREBASE_CONFIG > src/components/Server/config.json
             - name: Build SASS -> CSS
               run: |
                   npm install

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles.css';
-
 type infoProps = {
 	title: string;
 	content: string;

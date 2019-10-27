@@ -1,5 +1,4 @@
 /*==== Content Popup Form ====*/
-
 .content-blocks.pop
     left: 100%
     opacity: 0.3
@@ -29,31 +28,53 @@
     transition: all 0.7s
     z-index: 1
 
+.d-block
+    display: block!important
+
 .float-left
     float: left!important
 
 .float-right
     float: right!important
 
-.project-description
-    margin: 30px 0
+.project
+    &-description
+        margin: 30px 0
 
-.project-head
-    & span
-        color: #333
-        font-weight: 400
-        margin-right: 5px
+    &-head
+        & span
+            color: #333
+            font-weight: 400
+            margin-right: 5px
 
-.project-nav
-    margin-top: 50px
+    &-media img
+        margin-bottom: 30px
 
-    & a
-        color: inherit
-        font-weight: 500
+    &-nav
+        margin-top: 50px
 
-    & i
-        font-size: 24px
+        & a
+            color: inherit
+            font-weight: 500
 
+        & i
+            font-size: 24px
+
+.sr-only
+    position: absolute
+    width: 1px
+    height: 1px
+    padding: 0
+    overflow: hidden
+    clip: rect(0,0,0,0)
+    white-space: nowrap
+    clip-path: inset(50%)
+    border: 0
+
+.w-100
+    width: 100%!important
+
+/*==== Responsive ====*/
 @media (max-width: 1280px)
     .close-pop
         right: 0

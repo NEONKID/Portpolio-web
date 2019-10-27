@@ -6,8 +6,6 @@ import Post from './Post';
 
 import * as Inject from '../../../stores/MenuStateStore';
 
-import './styles.css';
-
 interface BCState {
 	data: any;
 }

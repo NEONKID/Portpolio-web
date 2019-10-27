@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import FB from '../../../Server';
 
@@ -10,11 +11,12 @@ type workProps = {
 	title: string;
 	caption: string;
 	fileName: string;
+	showPopup: any;
 };
 
-const Work = ({ category, img, title, caption, fileName }: workProps) => {
+const Work = ({ category, img, title, caption, fileName, showPopup }: workProps) => {
 	const [wall, setWall] = useState('');
-	const [contentUrl, setContentUrl] = useState('');
+	const [content, setContent]: any = useState();
 
 	useEffect(() => {
 		const storage = FB.storage().ref();
@@ -24,23 +26,30 @@ const Work = ({ category, img, title, caption, fileName }: workProps) => {
 			.child('NKHOME/images/' + img)
 			.getDownloadURL()
 			.then(url => {
-				// console.log(url);
 				setWall(url);
 			});
 
 		// Get Portfolio content,,
 		storage
-			.child('NKHOME/' + fileName)
+			.child(`NKHOME/${localStorage.getItem('locale') || 'en'}/${fileName}`)
 			.getDownloadURL()
 			.then(url => {
-				// console.log(url);
-				setContentUrl(url);
+				axios
+					.get(url, {
+						method: 'GET',
+					})
+					.then(res => {
+						setContent(res.data);
+					});
+			})
+			.catch(err => {
+				setContent('Sorry. An error occurred while loading content. I will continue to process it.');
 			});
 	});
 
 	return (
 		<div className={'col-md-4 col-sm-6 col-xs-12 portfolio-item ' + category}>
-			<a className="open-project" href={contentUrl}>
+			<a className="open-project" href="#" onClick={() => showPopup(content)}>
 				<div className="portfolio-column">
 					<img src={wall} alt="" />
 					<div className="portfolio-content">

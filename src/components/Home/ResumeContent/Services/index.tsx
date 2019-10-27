@@ -2,8 +2,6 @@ import React from 'react';
 
 import ServiceDetails from './ServiceDetails';
 
-import './styles.css';
-
 const Services = () => {
 	const serviceList = [
 		{

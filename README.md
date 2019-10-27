@@ -1,4 +1,4 @@
-# Portpolio for Neon K.I.D v2.0
+# Portpolio for Neon K.I.D
 
 [![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Deploy/badge.svg)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
 

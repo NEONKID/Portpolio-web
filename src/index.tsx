@@ -5,6 +5,7 @@ import { IntlProvider } from 'react-intl';
 import { render } from 'react-dom';
 
 import App from './components/App';
+import locale from './locale';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -14,8 +15,22 @@ WebFont.load({
 	},
 });
 
+// User Language,,
+
+const lang = navigator.language;
+let curLocale = localStorage.getItem('locale');
+
+if (curLocale === null) {
+	switch (lang) {
+		case 'ko-KR':
+			localStorage.setItem('locale', 'ko');
+			curLocale = localStorage.getItem('locale');
+			break;
+	}
+}
+
 render(
-	<IntlProvider locale="en">
+	<IntlProvider locale={curLocale || 'en'} messages={locale[curLocale || 'en']}>
 		<App />
 	</IntlProvider>,
 	document.getElementById('root'),

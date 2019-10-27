@@ -1,14 +1,17 @@
 import React from 'react';
+import { injectIntl, WrappedComponentProps, IntlFormatters } from 'react-intl';
 
 import './styles.css';
 
-type skillProps = {
+interface skillProps {
 	name: string;
 	year: number;
-};
+	intl?: IntlFormatters;
+}
 
-const SkillItem = ({ name, year }: skillProps) => {
-	const yearComment = year > 1 ? year + ' years experience' : year + ' year experience';
+const SkillItem = ({ name, year, intl }: skillProps & WrappedComponentProps) => {
+	const yearComment =
+		year > 1 ? year + intl.formatMessage({ id: 'exp-years' }) : year + intl.formatMessage({ id: 'exp-year' });
 
 	return (
 		<label className="progress-bar-label">
@@ -17,4 +20,4 @@ const SkillItem = ({ name, year }: skillProps) => {
 	);
 };
 
-export default SkillItem;
+export default injectIntl(SkillItem);

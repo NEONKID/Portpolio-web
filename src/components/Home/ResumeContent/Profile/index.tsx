@@ -1,27 +1,33 @@
 import React from 'react';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import ColInfo from './ColInfo';
 import './styles.css';
 
-const Profile = () => {
+const Profile = injectIntl(({ intl }) => {
 	return (
 		<div className="block-content">
 			<h3 className="block-title">Profile</h3>
 			<h3 className="subheading">
-				I'm a Back-end Developer. I aim to make a difference through my creative solution.
+				<FormattedMessage id="intro-title" />
 			</h3>
 			<p>
-				I worked with my colleagues on a project to develop a stable application. I aim to use my application in
-				any situation.
+				<FormattedMessage id="intro-desc" />
 			</p>
 			<div className="info-list row">
-				<ColInfo title="Name" content="Kwang Soo Jeong" />
-				<ColInfo title="Date of birth" content="August 25, 1993" />
-				<ColInfo title="E-mail" content="contact@neonkid.xyz" />
+				<ColInfo
+					title={intl.formatMessage({ id: 'name-title' })}
+					content={intl.formatMessage({ id: 'name' })}
+				/>
+				<ColInfo
+					title={intl.formatMessage({ id: 'birth-title' })}
+					content={intl.formatMessage({ id: 'birth' })}
+				/>
+				<ColInfo title={intl.formatMessage({ id: 'email-title' })} content="contact@neonkid.xyz" />
 				<ColInfo title="Skype" content="@clax1412" />
 			</div>
 		</div>
 	);
-};
+});
 
 export default Profile;

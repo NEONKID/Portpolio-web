@@ -10,16 +10,6 @@ import ResumeContent from './ResumeContent';
 
 import './styles.css';
 
-// Portfolio Modal
-$(document).on('click', '.open-project', function() {
-	var projectUrl = $(this).attr('href');
-	$('.inline-header').removeClass('showx');
-	$('.sidebar-menu').addClass('hidex');
-	$('.content-blocks.pop').addClass('showx');
-	$('.content-blocks.pop section').load(projectUrl + ' .load-data > *');
-	return false;
-});
-
 const Home = () => {
 	const opacity = {
 		opacity: 0.7,

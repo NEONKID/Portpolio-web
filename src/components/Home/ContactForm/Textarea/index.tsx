@@ -7,35 +7,11 @@ type taProps = {
 	name: string;
 	id: string;
 	placeholder: string;
-	lengthHelp?: Record<string, string>;
-	emptyHelp?: Record<string, string>;
+	minLength: number;
+	error: string;
 };
 
-const Textarea = ({ rows, name, id, placeholder, lengthHelp, emptyHelp }: taProps) => {
-	const lengthHelpBlock =
-		lengthHelp != null ? (
-			<small
-				className="help-block"
-				data-bv-validator="stringLength"
-				data-bv-for={name}
-				data-bv-result="NOT VALIDATED"
-			>
-				{lengthHelp['message']}
-			</small>
-		) : null;
-
-	const emptyHelpBlock =
-		emptyHelp != null ? (
-			<small
-				className="help-block"
-				data-bv-validator="notEmpty"
-				data-bv-for={name}
-				data-bv-result="NOT VALIDATED"
-			>
-				{emptyHelp['message']}
-			</small>
-		) : null;
-
+const Textarea = ({ rows, name, id, placeholder, minLength, error }: taProps) => {
 	return (
 		<Fragment>
 			<textarea
@@ -44,10 +20,11 @@ const Textarea = ({ rows, name, id, placeholder, lengthHelp, emptyHelp }: taProp
 				name={name}
 				id={id}
 				placeholder={placeholder}
-				data-bv-field={name}
+				data-minlength={minLength}
+				data-error={error}
+				required
 			/>
-			{lengthHelpBlock}
-			{emptyHelpBlock}
+			<small className="help-block with-errors"></small>
 		</Fragment>
 	);
 };

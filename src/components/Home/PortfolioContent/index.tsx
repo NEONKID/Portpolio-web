@@ -19,6 +19,7 @@ interface PCProps {}
 
 @inject((stores: Inject.Props) => ({
 	portfolioState: stores.store.portfolioState,
+	showPopup: stores.store.showPopup,
 }))
 @observer
 class PortfolioContent extends Component<PCProps, PCState> {
@@ -37,9 +38,10 @@ class PortfolioContent extends Component<PCProps, PCState> {
 		db.collection('projects')
 			.get()
 			.then(snapshot => {
-				this.setState({
-					pfList: snapshot.docs,
-				});
+				if (!snapshot.empty)
+					this.setState({
+						pfList: snapshot.docs,
+					});
 			});
 	}
 
@@ -64,7 +66,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 	}
 
 	render() {
-		const { portfolioState }: any = this.props;
+		const { portfolioState, showPopup }: any = this.props;
 
 		return (
 			<div className={portfolioState ? 'content-blocks portfolio showx' : 'content-blocks portfolio'}>
@@ -133,6 +135,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 												title={doc.data().title}
 												caption={doc.data().caption}
 												fileName={doc.data().filename}
+												showPopup={showPopup}
 												key={i}
 											/>
 										);

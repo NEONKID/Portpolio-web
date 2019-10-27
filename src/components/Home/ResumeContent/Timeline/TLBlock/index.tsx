@@ -14,17 +14,25 @@ type TLBProps = {
 
 const TLBlock = ({ category, name, pos, start, end, info }: TLBProps) => {
 	let cName, pName, format;
+	const locale = localStorage.getItem('locale');
+
 	switch (category) {
 		case 'experience':
 			pName = <span>{pos}</span>;
 			cName = ' @ ' + name;
-			format = 'MMMM DD YYYY';
+
+			if (locale === 'ko') format = 'YYYY. MM. DD';
+			else format = 'MMMM DD YYYY';
+
 			break;
 
 		case 'education':
 			pName = pos + ' | ';
 			cName = <span>{name}</span>;
-			format = 'MMMM YYYY';
+
+			if (locale === 'ko') format = 'YYYY. MM';
+			else format = 'MMMM YYYY';
+
 			break;
 	}
 

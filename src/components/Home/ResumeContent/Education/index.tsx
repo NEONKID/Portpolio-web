@@ -11,8 +11,10 @@ const Education = () => {
 
 	useEffect(() => {
 		const db = FB.firestore();
+		const locale = localStorage.getItem('locale') || 'en';
+
 		db.collection('edu')
-			.orderBy('end', 'desc')
+			.where('lang', '==', locale)
 			.get()
 			.then(snapshot => {
 				if (!snapshot.empty) setEdu(snapshot.docs);

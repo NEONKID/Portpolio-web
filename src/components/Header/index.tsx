@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import { FormattedMessage } from 'react-intl';
 
 import * as Inject from '../../stores/MenuStateStore';
 import './styles.css';
@@ -46,22 +47,22 @@ class Header extends Component {
 						className={resumeState ? 'resume menu-item active' : 'resume menu-item'}
 						onClick={showResumeContent}
 					>
-						Resume
+						<FormattedMessage id="menu-resume" />
 					</li>
 					<li
 						className={portfolioState ? 'portfolio menu-item active' : 'portfolio menu-item'}
 						onClick={showPortfolioContent}
 					>
-						Portfolio
+						<FormattedMessage id="menu-portfolio" />
 					</li>
 					<li className={blogState ? 'blog menu-item active' : 'blog menu-item'} onClick={showBlogContent}>
-						Blog
+						<FormattedMessage id="menu-blog" />
 					</li>
 					<li
 						className={contactState ? 'contact menu-item active' : 'contact menu-item'}
 						onClick={showContact}
 					>
-						Contact
+						<FormattedMessage id="menu-contact" />
 					</li>
 					<li id="close" className="menu-item" onClick={closeBtnClick}>
 						<i className="ion-ios-close"></i>

@@ -8,6 +8,7 @@ export class MenuStateStore {
 	@observable resumeState = false;
 	@observable nameCardReverse = false;
 	@observable popupState = false;
+	@observable popupContent = null;
 
 	@action showBlogContent = () => {
 		this.blogState = true;
@@ -50,6 +51,20 @@ export class MenuStateStore {
 		this.blogState = false;
 		this.portfolioState = false;
 		this.resumeState = false;
+		this.popupState = false;
+	};
+
+	@action showPopup = (content: any) => {
+		this.popupContent = content;
+		this.popupState = true;
+
+		this.menuItemState = false;
+	};
+
+	@action closePopup = () => {
+		this.menuItemState = true;
+
+		this.popupContent = null;
 		this.popupState = false;
 	};
 
