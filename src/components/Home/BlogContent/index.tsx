@@ -28,9 +28,11 @@ class BlogContent extends Component<BCProps, BCState> {
 			defaultRSS: 4,
 			timeout: 1500,
 		});
-		const CORSFree = 'https://cors-anywhere.herokuapp.com/';
 
-		parser.parseURL(CORSFree + 'https://blog.neonkid.xyz/rss').then(feed => {
+		// This variable run only development mode...
+		// const CORSFree = 'https://cors-anywhere.herokuapp.com/';
+
+		parser.parseURL('https://blog.neonkid.xyz/rss').then(feed => {
 			this.setState({ data: feed.items });
 		});
 	}
