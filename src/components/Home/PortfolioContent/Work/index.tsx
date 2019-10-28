@@ -49,7 +49,7 @@ const Work = ({ category, img, title, caption, fileName, showPopup }: workProps)
 
 	return (
 		<div className={'col-md-4 col-sm-6 col-xs-12 portfolio-item ' + category}>
-			<a className="open-project" href="#" onClick={() => showPopup(content)}>
+			<a className="open-project" onClick={() => showPopup(content)}>
 				<div className="portfolio-column">
 					<img src={wall} alt="" />
 					<div className="portfolio-content">
