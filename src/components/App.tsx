@@ -7,8 +7,8 @@ import Preloader from './Preloader';
 import Slider from './Slider';
 import Header from './Header';
 import Home from './Home';
-
 import { MenuStateStore } from '../stores/MenuStateStore';
+
 import './App.css';
 
 const App = () => {

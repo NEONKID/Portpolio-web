@@ -22,7 +22,7 @@ class ResumeContent extends Component {
 
 		return (
 			<div className={style}>
-				<section className="content" id="resume">
+				<section className="content" id="resumeContent">
 					<Profile />
 					<Skills />
 					<Experience />
