@@ -49,6 +49,7 @@ class Header extends Component {
 					>
 						<FormattedMessage id="menu-resume" />
 					</li>
+
 					<li
 						className={portfolioState ? 'portfolio menu-item active' : 'portfolio menu-item'}
 						onClick={showPortfolioContent}

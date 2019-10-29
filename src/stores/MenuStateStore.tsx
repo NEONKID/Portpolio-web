@@ -1,6 +1,10 @@
+import React from 'react';
 import { observable, action } from 'mobx';
+import { MobXProviderContext } from 'mobx-react';
 
 export class MenuStateStore {
+	@observable siteLoading = true;
+	@observable removeSplash = false;
 	@observable menuItemState = false;
 	@observable blogState = false;
 	@observable contactState = false;
@@ -9,6 +13,14 @@ export class MenuStateStore {
 	@observable nameCardReverse = false;
 	@observable popupState = false;
 	@observable popupContent = null;
+
+	@action loadingComplete = () => {
+		this.siteLoading = false;
+	};
+
+	@action onRemoveSplash = () => {
+		this.removeSplash = true;
+	};
 
 	@action showBlogContent = () => {
 		this.blogState = true;
@@ -84,3 +96,7 @@ export interface ParentProps {}
 export interface Props extends ParentProps {
 	store: MenuStateStore;
 }
+
+export const useStores = () => {
+	return React.useContext(MobXProviderContext);
+};
