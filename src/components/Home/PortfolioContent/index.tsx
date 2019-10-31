@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import Isotope from 'isotope-layout';
 import { observer, inject } from 'mobx-react';
 
@@ -82,7 +83,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 											className={this.state.category === '*' ? 'active' : ''}
 											onClick={() => this.setState({ category: '*' })}
 										>
-											All
+											<FormattedMessage id="filter-all" />
 										</li>
 										<li
 											className={this.state.category === '.desktop' ? 'active' : ''}
@@ -92,7 +93,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 												})
 											}
 										>
-											Desktop App
+											<FormattedMessage id="filter-desktop" />
 										</li>
 										<li
 											className={this.state.category === '.android' ? 'active' : ''}
@@ -102,7 +103,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 												})
 											}
 										>
-											Mobile App
+											<FormattedMessage id="filter-mobile" />
 										</li>
 										<li
 											className={this.state.category === '.webapp' ? 'active' : ''}
@@ -112,7 +113,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 												})
 											}
 										>
-											Web App
+											<FormattedMessage id="filter-web" />
 										</li>
 										<li
 											className={this.state.category === '.ml' ? 'active' : ''}
@@ -122,7 +123,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 												})
 											}
 										>
-											ML Model
+											<FormattedMessage id="filter-ml" />
 										</li>
 									</ul>
 								</div>
