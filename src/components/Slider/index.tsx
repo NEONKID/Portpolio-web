@@ -21,7 +21,7 @@ const Slider = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			if (!data.siteLoading) data.onRemoveSplash();
-		}, 1500);
+		}, 1000);
 	});
 
 	return <div className={style}></div>;
