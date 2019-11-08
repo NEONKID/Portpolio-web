@@ -26,6 +26,11 @@ if (curLocale === null) {
 			localStorage.setItem('locale', 'ko');
 			curLocale = localStorage.getItem('locale');
 			break;
+
+		case 'ja-JP':
+			localStorage.setItem('locale', 'jp');
+			curLocale = localStorage.getItem('locale');
+			break;
 	}
 }
 
