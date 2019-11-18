@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { injectIntl } from 'react-intl';
+import axios from 'axios';
 
 import 'bootstrap-validator';
 
@@ -9,13 +10,57 @@ import Textbox from './Textbox';
 import Textarea from './Textarea';
 
 import * as Inject from '../../../stores/MenuStateStore';
+
 import './styles.css';
+
+interface CFProps {}
+
+interface CFState {
+	name: string;
+	email: string;
+	msg: string;
+}
 
 @inject((stores: Inject.Props) => ({
 	contactState: stores.store.contactState,
 }))
 @observer
-class ContactForm extends Component {
+class ContactForm extends Component<CFProps, CFState> {
+	emailChange = (e: any) => {
+		this.setState({
+			email: e.target.value,
+		});
+	};
+
+	msgChange = (e: any) => {
+		this.setState({
+			msg: e.target.value,
+		});
+	};
+
+	nameChange = (e: any) => {
+		this.setState({
+			name: e.target.value,
+		});
+	};
+
+	sendMessage = (event: any) => {
+		event.preventDefault();
+
+		axios
+			.post('https://apis.neonkid.xyz/v1/sendMessage', {
+				name: this.state.name,
+				email: this.state.email,
+				message: this.state.msg,
+			})
+			.then(res => {
+				alert('Success');
+			})
+			.catch(err => {
+				alert('Failed');
+			});
+	};
+
 	render() {
 		const { contactState, intl }: any = this.props;
 		const style = contactState ? 'content-blocks contact showx' : 'content-blocks contact';
@@ -27,7 +72,12 @@ class ContactForm extends Component {
 						<h3 className="block-title">Get in touch</h3>
 						<div className="row">
 							<div className="col-md-6">
-								<form className="contact-form bv-form" id="contact_form" data-toggle="validator">
+								<form
+									className="contact-form bv-form"
+									id="contact_form"
+									data-toggle="validator"
+									onSubmit={this.sendMessage}
+								>
 									<div className="form-control-wrap">
 										<div id="message" className="alert alert-danger alert-dismissible fade"></div>
 										<div className="form-group has-feedback">
@@ -38,6 +88,7 @@ class ContactForm extends Component {
 												name="fname"
 												minLength={2}
 												error={intl.formatMessage({ id: 'con-name-error' })}
+												onChange={this.nameChange}
 											/>
 										</div>
 										<div className="form-group mar-top-40 has-feedback">
@@ -48,6 +99,7 @@ class ContactForm extends Component {
 												name="email"
 												minLength={7}
 												error={intl.formatMessage({ id: 'con-email-error' })}
+												onChange={this.emailChange}
 											/>
 										</div>
 										<div className="form-group mar-top-60 has-feedback">
@@ -58,6 +110,7 @@ class ContactForm extends Component {
 												placeholder={intl.formatMessage({ id: 'con-desc-form' })}
 												minLength={4}
 												error={intl.formatMessage({ id: 'con-desc-error' })}
+												onChange={this.msgChange}
 											/>
 										</div>
 										<div className="form-group mar-top-40">

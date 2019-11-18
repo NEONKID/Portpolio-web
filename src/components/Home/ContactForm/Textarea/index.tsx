@@ -9,9 +9,10 @@ type taProps = {
 	placeholder: string;
 	minLength: number;
 	error: string;
+	onChange?: any;
 };
 
-const Textarea = ({ rows, name, id, placeholder, minLength, error }: taProps) => {
+const Textarea = ({ rows, name, id, placeholder, minLength, error, onChange }: taProps) => {
 	return (
 		<Fragment>
 			<textarea
@@ -22,6 +23,7 @@ const Textarea = ({ rows, name, id, placeholder, minLength, error }: taProps) =>
 				placeholder={placeholder}
 				data-minlength={minLength}
 				data-error={error}
+				onChange={onChange}
 				required
 			/>
 			<small className="help-block with-errors"></small>
