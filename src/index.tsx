@@ -16,7 +16,6 @@ WebFont.load({
 });
 
 // User Language,,
-
 const lang = navigator.language;
 let curLocale = localStorage.getItem('locale');
 
