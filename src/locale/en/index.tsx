@@ -29,6 +29,15 @@ const ENG = {
 		'con-loc-content': 'Cheonan, Republic of KR',
 		'con-email-title': 'E-mail',
 		'con-send-btn': 'Send Message',
+		'con-form-loading-title': 'Sending',
+		'con-form-loading-body': 'Sending Please wait a moment.',
+		'con-form-success-title': 'Success',
+		'con-form-success-body': 'Your message has been sent.',
+		'con-form-fail-title': 'Fail',
+		'con-form-fail-body': 'Failed to send the message.',
+		'con-form-error-title': 'Error',
+		'con-form-error-body': 'Please write your inquiry correctly.',
+		'con-form-ok-btn': 'OK',
 	},
 };
 

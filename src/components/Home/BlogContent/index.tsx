@@ -36,7 +36,7 @@ class BlogContent extends Component<BCProps, BCState> {
 		});
 	}
 
-	prettyContent(content: any) {
+	prettyContent = (content: any) => {
 		if (typeof content === 'string') {
 			return content
 				.replace(/(<([^>]+)>)/gi, '')
@@ -44,7 +44,7 @@ class BlogContent extends Component<BCProps, BCState> {
 				.replace('&nbsp;', '')
 				.substring(5, 250);
 		} else return '';
-	}
+	};
 
 	render() {
 		const { blogState }: any = this.props;
