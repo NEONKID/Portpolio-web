@@ -7,10 +7,9 @@ type tbProps = {
 	name: string;
 	minLength: number;
 	error: string;
-	onChange?: any;
 };
 
-const Textbox = ({ type, id, placeholder, name, minLength, error, onChange }: tbProps) => {
+const Textbox = ({ type, id, placeholder, name, minLength, error }: tbProps) => {
 	return (
 		<Fragment>
 			<input
@@ -21,7 +20,6 @@ const Textbox = ({ type, id, placeholder, name, minLength, error, onChange }: tb
 				name={name}
 				data-minlength={minLength}
 				data-error={error}
-				onChange={onChange}
 				required
 			/>
 			<small className="help-block with-errors"></small>
