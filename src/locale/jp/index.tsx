@@ -29,6 +29,15 @@ const JPN = {
 		'con-loc-content': '大韓民国 天安市',
 		'con-email-title': 'メールアドレス',
 		'con-send-btn': '転送',
+		'con-form-loading-title': '転送中',
+		'con-form-loading-body': '要求されたメッセージを転送しています。しばらくお待ちください。',
+		'con-form-success-title': '転送完了',
+		'con-form-success-body': 'メッセージが正常に送信されました。',
+		'con-form-fail-title': '転送失敗',
+		'con-form-fail-body': 'メッセージを転送するために失敗しました。',
+		'con-form-error-title': 'エラー',
+		'con-form-error-body': 'フォームを正しく記入してください。',
+		'con-form-ok-btn': '確認',
 	},
 };
 

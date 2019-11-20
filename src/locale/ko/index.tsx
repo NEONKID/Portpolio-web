@@ -29,6 +29,15 @@ const KOR = {
 		'con-loc-content': '대한민국 천안시',
 		'con-email-title': '이메일 주소',
 		'con-send-btn': '메시지 전송',
+		'con-form-loading-title': '전송 중',
+		'con-form-loading-body': '전송 중입니다. 잠시만 기다려주십시오.',
+		'con-form-success-title': '전송 완료',
+		'con-form-success-body': '메시지가 전송되었습니다.',
+		'con-form-fail-title': '전송 실패',
+		'con-form-fail-body': '메시지를 보내는 데 실패하였습니다.',
+		'con-form-ok-btn': '확인',
+		'con-form-error-title': '오류',
+		'con-form-error-body': '문의 사항을 올바르게 적어주십시오.',
 	},
 };
 
