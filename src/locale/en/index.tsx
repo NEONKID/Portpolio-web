@@ -4,9 +4,9 @@ const ENG = {
 		'menu-portfolio': 'Portfolio',
 		'menu-blog': 'Blog',
 		'menu-contact': 'Contact',
-		'intro-title': "I'm a Back-end Developer. I aim to make a difference through my creative solution.",
+		'intro-title': 'I am a developer who develops from a service point of view, opinion and convergence.',
 		'intro-desc':
-			'I worked with my colleagues on a project to develop a stable application. I aim to use my application in any situation.',
+			'I am a style that develops quickly to requirements, meticulously tests and develops for accurate results, and actively adopts development using DevOps environments such as CI/CD to make these developments more efficient. In recent years, I have been interested in high-capacity data processing services in order to continue to grow as a back-end developer. In addition, I am studying RabbitMQ, Apache Spark, Spring Cloud, Spring Batch.',
 		'name-title': 'Name',
 		name: 'Kwang Soo Jeong',
 		'birth-title': 'Date of birth',
