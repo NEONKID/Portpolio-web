@@ -6,7 +6,7 @@ import * as Inject from '../../stores/MenuStateStore';
 import './styles.css';
 
 const useData = () => {
-	const { store }: Inject.Props = Inject.useStores();
+	const { store } = Inject.useStores();
 
 	return {
 		siteLoading: store.siteLoading,
