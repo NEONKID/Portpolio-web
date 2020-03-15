@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import i18next from 'i18next';
 import { firestore } from 'firebase';
 
-import FB from '../../../Server';
+import FB from '../../../Server/firebase';
 import Timeline from '../Timeline';
 
 import './styles.css';
@@ -11,7 +12,7 @@ const Experience = () => {
 
 	useEffect(() => {
 		const db = FB.firestore();
-		const locale = localStorage.getItem('locale') || 'en';
+		const locale = i18next.language || 'en';
 
 		db.collection('exp')
 			.where('lang', '==', locale)

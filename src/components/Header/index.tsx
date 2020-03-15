@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Translation } from 'react-i18next';
 import { observer, inject } from 'mobx-react';
-import { FormattedMessage } from 'react-intl';
 
 import * as Inject from '../../stores/MenuStateStore';
 import './styles.css';
@@ -42,33 +42,39 @@ class Header extends Component {
 		return (
 			<div className={menuItemState ? 'inline-header showx' : 'inline-header'}>
 				<span className="status">Neon K.I.D</span>
-				<ul className="inline-header-menu">
-					<li
-						className={resumeState ? 'resume menu-item active' : 'resume menu-item'}
-						onClick={showResumeContent}
-					>
-						<FormattedMessage id="menu-resume" />
-					</li>
-
-					<li
-						className={portfolioState ? 'portfolio menu-item active' : 'portfolio menu-item'}
-						onClick={showPortfolioContent}
-					>
-						<FormattedMessage id="menu-portfolio" />
-					</li>
-					<li className={blogState ? 'blog menu-item active' : 'blog menu-item'} onClick={showBlogContent}>
-						<FormattedMessage id="menu-blog" />
-					</li>
-					<li
-						className={contactState ? 'contact menu-item active' : 'contact menu-item'}
-						onClick={showContact}
-					>
-						<FormattedMessage id="menu-contact" />
-					</li>
-					<li id="close" className="menu-item" onClick={closeBtnClick}>
-						<i className="ion-ios-close"></i>
-					</li>
-				</ul>
+				<Translation>
+					{(t, { i18n, lng }, ready) => (
+						<ul className="inline-header-menu">
+							<li
+								className={resumeState ? 'resume menu-item active' : 'resume menu-item'}
+								onClick={showResumeContent}
+							>
+								{ready ? t('menu-resume') : 'default'}
+							</li>
+							<li
+								className={portfolioState ? 'portfolio menu-item active' : 'portfolio menu-item'}
+								onClick={showPortfolioContent}
+							>
+								{ready ? t('menu-portfolio') : 'default'}
+							</li>
+							<li
+								className={blogState ? 'blog menu-item active' : 'blog menu-item'}
+								onClick={showBlogContent}
+							>
+								{ready ? t('menu-blog') : 'default'}
+							</li>
+							<li
+								className={contactState ? 'contact menu-item active' : 'contact menu-item'}
+								onClick={showContact}
+							>
+								{ready ? t('menu-contact') : 'default'}
+							</li>
+							<li id="close" className="menu-item" onClick={closeBtnClick}>
+								<i className="ion-ios-close"></i>
+							</li>
+						</ul>
+					)}
+				</Translation>
 			</div>
 		);
 	}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import Isotope from 'isotope-layout';
 import { observer, inject } from 'mobx-react';
+import { Translation } from 'react-i18next';
 
 import EmailBtn from '../EmailBtn';
-import FB from '../../Server';
+import FB from '../../Server/firebase';
 import Work from './Work';
 
 import * as Inject from '../../../stores/MenuStateStore';
@@ -78,54 +78,58 @@ class PortfolioContent extends Component<PCProps, PCState> {
 							<div className="col-md-12">
 								<div className="filters">
 									<span>Filters: </span>
-									<ul id="filters">
-										<li
-											className={this.state.category === '*' ? 'active' : ''}
-											onClick={() => this.setState({ category: '*' })}
-										>
-											<FormattedMessage id="filter-all" />
-										</li>
-										<li
-											className={this.state.category === '.desktop' ? 'active' : ''}
-											onClick={() =>
-												this.setState({
-													category: '.desktop',
-												})
-											}
-										>
-											<FormattedMessage id="filter-desktop" />
-										</li>
-										<li
-											className={this.state.category === '.android' ? 'active' : ''}
-											onClick={() =>
-												this.setState({
-													category: '.mobile',
-												})
-											}
-										>
-											<FormattedMessage id="filter-mobile" />
-										</li>
-										<li
-											className={this.state.category === '.webapp' ? 'active' : ''}
-											onClick={() =>
-												this.setState({
-													category: '.webapp',
-												})
-											}
-										>
-											<FormattedMessage id="filter-web" />
-										</li>
-										<li
-											className={this.state.category === '.ml' ? 'active' : ''}
-											onClick={() =>
-												this.setState({
-													category: '.ml',
-												})
-											}
-										>
-											<FormattedMessage id="filter-ml" />
-										</li>
-									</ul>
+									<Translation>
+										{(t, { i18n, lng }, ready) => (
+											<ul id="filters">
+												<li
+													className={this.state.category === '*' ? 'active' : ''}
+													onClick={() => this.setState({ category: '*' })}
+												>
+													{ready ? t('filter-all') : 'default'}
+												</li>
+												<li
+													className={this.state.category === '.desktop' ? 'active' : ''}
+													onClick={() =>
+														this.setState({
+															category: '.desktop',
+														})
+													}
+												>
+													{ready ? t('filter-desktop') : 'default'}
+												</li>
+												<li
+													className={this.state.category === '.android' ? 'active' : ''}
+													onClick={() =>
+														this.setState({
+															category: '.mobile',
+														})
+													}
+												>
+													{ready ? t('filter-mobile') : 'default'}
+												</li>
+												<li
+													className={this.state.category === '.webapp' ? 'active' : ''}
+													onClick={() =>
+														this.setState({
+															category: '.webapp',
+														})
+													}
+												>
+													{ready ? t('filter-web') : 'default'}
+												</li>
+												<li
+													className={this.state.category === '.ml' ? 'active' : ''}
+													onClick={() =>
+														this.setState({
+															category: '.ml',
+														})
+													}
+												>
+													{ready ? t('filter-ml') : 'default'}
+												</li>
+											</ul>
+										)}
+									</Translation>
 								</div>
 								<div className="classic portfolio-container row" id="portfolio-block-container">
 									{this.state.pfList.map((doc, i) => {

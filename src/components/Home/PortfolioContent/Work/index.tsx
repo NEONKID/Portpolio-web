@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import i18next from 'i18next';
 
-import FB from '../../../Server';
+import FB from '../../../Server/firebase';
 
 import './styles.css';
 
@@ -31,7 +32,7 @@ const Work = ({ category, img, title, caption, fileName, showPopup }: workProps)
 
 		// Get Portfolio content,,
 		storage
-			.child(`NKHOME/${localStorage.getItem('locale') || 'en'}/${fileName}`)
+			.child(`NKHOME/${i18next.language || 'en'}/${fileName}`)
 			.getDownloadURL()
 			.then(url => {
 				axios
