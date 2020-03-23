@@ -19,6 +19,7 @@ interface PCState {
 interface PCProps {}
 
 @inject((stores: Inject.Props) => ({
+	curlanguage: stores.store.curlanguage,
 	portfolioState: stores.store.portfolioState,
 	showPopup: stores.store.showPopup,
 }))
@@ -67,7 +68,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 	}
 
 	render() {
-		const { portfolioState, showPopup }: any = this.props;
+		const { curlanguage, portfolioState, showPopup }: any = this.props;
 
 		return (
 			<div className={portfolioState ? 'content-blocks portfolio showx' : 'content-blocks portfolio'}>
@@ -137,6 +138,7 @@ class PortfolioContent extends Component<PCProps, PCState> {
 											<Work
 												category={doc.data().category}
 												img={doc.data().img}
+												lng={curlanguage}
 												title={doc.data().title}
 												caption={doc.data().caption}
 												fileName={doc.data().filename}

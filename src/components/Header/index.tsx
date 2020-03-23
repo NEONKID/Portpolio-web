@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FlagIcon, FlagIconCode } from 'react-flag-kit';
 import { Translation } from 'react-i18next';
 import { observer, inject } from 'mobx-react';
 
@@ -6,6 +7,7 @@ import * as Inject from '../../stores/MenuStateStore';
 import './styles.css';
 
 @inject((stores: Inject.Props) => ({
+	changeLanguage: stores.store.changeLanguage,
 	menuItemState: stores.store.menuItemState,
 	resumeState: stores.store.resumeState,
 	portfolioState: stores.store.portfolioState,
@@ -27,6 +29,7 @@ class Header extends Component {
 
 	render() {
 		const {
+			changeLanguage,
 			menuItemState,
 			resumeState,
 			portfolioState,
@@ -39,9 +42,18 @@ class Header extends Component {
 			showPortfolioContent,
 		}: any = this.props;
 
+		const countries: Array<FlagIconCode> = ['KR', 'US', 'JP'];
+
 		return (
 			<div className={menuItemState ? 'inline-header showx' : 'inline-header'}>
 				<span className="status">Neon K.I.D</span>
+				{countries.map((country, i) => {
+					return (
+						<i onClick={() => changeLanguage(country)} key={i}>
+							<FlagIcon code={country} size={20} style={{ margin: '.5em' }} />
+						</i>
+					);
+				})}
 				<Translation>
 					{(t, { i18n, lng }, ready) => (
 						<ul className="inline-header-menu">

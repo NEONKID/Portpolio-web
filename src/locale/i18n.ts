@@ -9,7 +9,7 @@ import ko from './ko';
 i18n.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		lng: 'ko',
+		lng: 'en',
 		fallbackLng: 'en',
 
 		resources: {
