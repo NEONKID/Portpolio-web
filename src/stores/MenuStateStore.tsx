@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'i18next';
 import { observable, action } from 'mobx';
 import { MobXProviderContext } from 'mobx-react';
 
@@ -13,6 +14,7 @@ export class MenuStateStore {
 	@observable nameCardReverse = false;
 	@observable popupState = false;
 	@observable popupContent = null;
+	@observable curlanguage = i18n.language || 'en';
 
 	@action loadingComplete = () => {
 		this.siteLoading = false;
@@ -20,6 +22,18 @@ export class MenuStateStore {
 
 	@action onRemoveSplash = () => {
 		this.removeSplash = true;
+	};
+
+	@action changeLanguage = (region: string) => {
+		const lng = {
+			US: 'en',
+			KR: 'ko',
+			JP: 'jp',
+		};
+
+		i18n.changeLanguage(lng[region]).then(() => {
+			this.curlanguage = lng[region];
+		});
 	};
 
 	@action showBlogContent = () => {
