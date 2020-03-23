@@ -1,11 +1,10 @@
 import React from 'react';
 import WebFont from 'webfontloader';
 
-import { IntlProvider } from 'react-intl';
 import { render } from 'react-dom';
 
 import App from './components/App';
-import locale from './locale';
+import './locale/i18n';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -15,30 +14,7 @@ WebFont.load({
 	},
 });
 
-// User Language,,
-const lang = navigator.language;
-let curLocale = localStorage.getItem('locale');
-
-if (curLocale === null) {
-	switch (lang) {
-		case 'ko-KR':
-			localStorage.setItem('locale', 'ko');
-			curLocale = localStorage.getItem('locale');
-			break;
-
-		case 'ja-JP':
-			localStorage.setItem('locale', 'jp');
-			curLocale = localStorage.getItem('locale');
-			break;
-	}
-}
-
-render(
-	<IntlProvider locale={curLocale || 'en'} messages={locale[curLocale || 'en']}>
-		<App />
-	</IntlProvider>,
-	document.getElementById('root'),
-);
+render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

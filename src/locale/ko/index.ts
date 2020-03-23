@@ -1,5 +1,5 @@
 const KOR = {
-	ko: {
+	translation: {
 		'menu-resume': '이력서',
 		'menu-portfolio': '포트폴리오',
 		'menu-blog': '블로그',

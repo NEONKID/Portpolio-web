@@ -1,5 +1,5 @@
 const JPN = {
-	jp: {
+	translation: {
 		'menu-resume': '履歴書',
 		'menu-portfolio': 'ポートフォリオ',
 		'menu-blog': 'ブログ',

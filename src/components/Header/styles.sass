@@ -1,4 +1,4 @@
-/* ======= inline-header ======= */
+ /* ======= inline-header ======= */
 .inline-header
     background: #F1F3F6
     position: fixed
@@ -9,6 +9,9 @@
     transition: all 0.5s
     z-index: 1
 
+    & i
+        cursor: pointer
+
     &.showx
         top: 0
 
@@ -16,6 +19,7 @@
     color: #333
     line-height: 38px
     padding-left: 45px
+    margin: 1.5em
 
     &:before
         position: absolute
@@ -168,8 +172,15 @@
             padding: 0 10px
 
 @media (max-width:980px)
-    .inline-header-menu
-        margin-top: 5px
+    .inline-header
+        & i
+            margin: .2em
+
+        &-menu
+            margin-top: 5px
+
+    .status
+        display: none
 
 @media (max-width:800px) and (orientation:landscape)
     .inline-header

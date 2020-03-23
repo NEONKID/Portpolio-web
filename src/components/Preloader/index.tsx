@@ -23,7 +23,7 @@ const Preloader = () => {
 	const style = data.siteLoading ? 'preloader' : 'preloader fadeOut';
 
 	useEffect(() => {
-		setTimeout(() => data.loadingComplete(), 500);
+		setTimeout(() => data.loadingComplete(), 1500);
 	});
 
 	return (

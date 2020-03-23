@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-import { injectIntl } from 'react-intl';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { observer } from 'mobx-react';
+import { useTranslation, Translation } from 'react-i18next';
 
 import 'bootstrap-validator';
 
@@ -11,205 +10,179 @@ import Textbox from './Textbox';
 import Textarea from './Textarea';
 
 import * as Inject from '../../../stores/MenuStateStore';
+import { sendMsg } from '../../Server/nkapi/contactMe';
 
 import './styles.css';
 
-interface CFProps {}
+const useData = () => {
+	const { store } = Inject.useStores();
 
-interface CFState {
-	name: string;
-	email: string;
-	msg: string;
-
-	resTitle: string;
-	resBody: string;
-}
-
-@inject((stores: Inject.Props) => ({
-	contactState: stores.store.contactState,
-}))
-@observer
-class ContactForm extends Component<CFProps, CFState> {
-	state: CFState = {
-		name: '',
-		email: '',
-		msg: '',
-
-		resTitle: '',
-		resBody: '',
+	return {
+		contactState: store.contactState,
 	};
+};
 
-	emailChange = (e: any) => {
+const ContactForm = () => {
+	const data = useData();
+	const { t } = useTranslation();
+
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [msg, setMsg] = useState('');
+
+	const [resTitle, setResTitle] = useState('');
+	const [resBody, setResBody] = useState('');
+
+	const emailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const email = e.target.value;
 
 		if (email.length < 5) return;
 		if (!email.includes('@')) return;
 
-		this.setState({
-			email: e.target.value,
-		});
+		setEmail(email);
 	};
 
-	msgChange = (e: any) => {
+	const msgChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const msg = e.target.value;
 
 		if (msg.length < 6) return;
 
-		this.setState({
-			msg: e.target.value,
-		});
+		setMsg(msg);
 	};
 
-	nameChange = (e: any) => {
+	const nameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const name = e.target.value;
 
-		if (name.lengtn < 3) return;
+		if (name.length < 3) return;
 
-		this.setState({
-			name: e.target.value,
-		});
+		setName(name);
 	};
 
-	sendMessage = (event: any) => {
-		const { intl }: any = this.props;
-
+	const sendMessage = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		if (this.state.name === '' || this.state.email === '' || this.state.msg === '') {
-			this.setState({
-				resTitle: intl.formatMessage({ id: 'con-form-error-title' }),
-				resBody: intl.formatMessage({ id: 'con-form-error-body' }),
-			});
+		if (name === '' || email === '' || msg === '') {
+			setResTitle(t('con-form-error-title'));
+			setResBody(t('con-form-error-body'));
 			return;
 		}
 
-		this.setState({
-			resTitle: intl.formatMessage({ id: 'con-form-loading-title' }),
-			resBody: intl.formatMessage({ id: 'con-form-loading-body' }),
-		});
+		setResTitle(t('con-form-loading-title'));
+		setResBody(t('con-form-loading-body'));
 
-		axios
-			.post('https://apis.neonkid.xyz/v1/sendMessage', {
-				name: this.state.name,
-				email: this.state.email,
-				message: this.state.msg,
-			})
+		sendMsg(name, email, msg)
 			.then(res => {
-				this.setState({
-					resTitle: intl.formatMessage({ id: 'con-form-success-title' }),
-					resBody: intl.formatMessage({ id: 'con-form-success-body' }),
-				});
+				setResTitle(t('con-form-success-title'));
+				setResBody(t('con-form-success-body'));
 
 				console.log(res);
 			})
 			.catch(err => {
-				this.setState({
-					resTitle: intl.formatMessage({ id: 'con-form-fail-title' }),
-					resBody: intl.formatMessage({ id: 'con-form-fail-body' }),
-				});
+				setResTitle(t('con-form-fail-title'));
+				setResBody(t('con-form-fail-body'));
 
 				console.log(err);
 			});
 	};
 
-	render() {
-		const { contactState, intl }: any = this.props;
-		const style = contactState ? 'content-blocks contact showx' : 'content-blocks contact';
+	const style = data.contactState ? 'content-blocks contact showx' : 'content-blocks contact';
 
-		return (
-			<div className={style}>
-				<section className="content">
-					<div className="block-content">
-						<h3 className="block-title">Get in touch</h3>
-						<div className="row">
-							<div className="col-md-6">
-								<form
-									className="contact-form bv-form"
-									id="contact_form"
-									data-toggle="validator"
-									onSubmit={this.sendMessage}
-								>
-									<div className="form-control-wrap">
-										<div id="message" className="alert alert-danger alert-dismissible fade"></div>
-										<div
-											id="feedback-name"
-											className="form-group has-feedback"
-											onChange={this.nameChange}
-										>
-											<Textbox
-												type="text"
-												id="fname"
-												placeholder={intl.formatMessage({ id: 'con-name-form' })}
-												name="fname"
-												minLength={2}
-												error={intl.formatMessage({ id: 'con-name-error' })}
-											/>
-										</div>
-										<div
-											id="feedback-email"
-											className="form-group mar-top-40 has-feedback"
-											onChange={this.emailChange}
-										>
-											<Textbox
-												type="email"
-												id="email"
-												placeholder={intl.formatMessage({ id: 'con-email-form' })}
-												name="email"
-												minLength={7}
-												error={intl.formatMessage({ id: 'con-email-error' })}
-											/>
-										</div>
-										<div
-											id="feedback-comment"
-											className="form-group mar-top-60 has-feedback"
-											onChange={this.msgChange}
-										>
-											<Textarea
-												rows={10}
-												name="comment"
-												id="comment"
-												placeholder={intl.formatMessage({ id: 'con-desc-form' })}
-												minLength={4}
-												error={intl.formatMessage({ id: 'con-desc-error' })}
-											/>
-										</div>
-										<div className="form-group mar-top-40">
-											<button
-												type="submit"
-												className="btn v7"
-												data-toggle="modal"
-												data-target="#resModal"
+	return (
+		<div className={style}>
+			<section className="content">
+				<div className="block-content">
+					<h3 className="block-title">Get in touch</h3>
+					<Translation>
+						{(t, { i18n, lng }, ready) => (
+							<div className="row">
+								<div className="col-md-6">
+									<form
+										className="contact-form bv-form"
+										id="contact_form"
+										data-toggle="validator"
+										onSubmit={sendMessage}
+									>
+										<div className="form-control-wrap">
+											<div
+												id="message"
+												className="alert alert-danger alert-dismissible fade"
+											></div>
+											<div
+												id="feedback-name"
+												className="form-group has-feedback"
+												onChange={nameChange}
 											>
-												{intl.formatMessage({ id: 'con-send-btn' })}
-											</button>
-											<ContactModal
-												title={this.state.resTitle}
-												message={this.state.resBody}
-												id="resModal"
-											/>
+												<Textbox
+													type="text"
+													id="fname"
+													placeholder={t('con-name-form')}
+													name="fname"
+													minLength={2}
+													error={t('con-name-error')}
+												/>
+											</div>
+											<div
+												id="feedback-email"
+												className="form-group mar-top-40 has-feedback"
+												onChange={emailChange}
+											>
+												<Textbox
+													type="email"
+													id="email"
+													placeholder={t('con-email-form')}
+													name="email"
+													minLength={7}
+													error={t('con-email-error')}
+												/>
+											</div>
+											<div
+												id="feedback-comment"
+												className="form-group mar-top-60 has-feedback"
+												onChange={msgChange}
+											>
+												<Textarea
+													rows={10}
+													name="comment"
+													id="comment"
+													placeholder={t('con-desc-form')}
+													minLength={4}
+													error={t('con-desc-error')}
+												/>
+											</div>
+											<div className="form-group mar-top-40">
+												<button
+													type="submit"
+													className="btn v7"
+													data-toggle="modal"
+													data-target="#resModal"
+												>
+													{t('con-send-btn')}
+												</button>
+												<ContactModal title={resTitle} message={resBody} id="resModal" />
+											</div>
 										</div>
-									</div>
-								</form>
+									</form>
+								</div>
+								<div className="col-md-5">
+									<ContactContent
+										icon="ios-pin"
+										title={t('con-loc-title')}
+										content={t('con-loc-content')}
+									/>
+									<ContactContent icon="logo-skype" title="Skype" content="@clax1412" />
+									<ContactContent
+										icon="ios-mail"
+										title={t('con-email-title')}
+										content="contact@neonkid.xyz"
+									/>
+								</div>
 							</div>
-							<div className="col-md-5">
-								<ContactContent
-									icon="ios-pin"
-									title={intl.formatMessage({ id: 'con-loc-title' })}
-									content={intl.formatMessage({ id: 'con-loc-content' })}
-								/>
-								<ContactContent icon="logo-skype" title="Skype" content="@clax1412" />
-								<ContactContent
-									icon="ios-mail"
-									title={intl.formatMessage({ id: 'con-email-title' })}
-									content="contact@neonkid.xyz"
-								/>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		);
-	}
-}
+						)}
+					</Translation>
+				</div>
+			</section>
+		</div>
+	);
+};
 
-export default injectIntl(ContactForm);
+export default observer(ContactForm);

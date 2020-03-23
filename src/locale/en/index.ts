@@ -1,5 +1,5 @@
 const ENG = {
-	en: {
+	translation: {
 		'menu-resume': 'Resume',
 		'menu-portfolio': 'Portfolio',
 		'menu-blog': 'Blog',
