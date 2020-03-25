@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Parser, { Item } from 'rss-parser';
+import { Item } from 'rss-parser';
 
 import Post from './Post';
+import { receivePost } from '../../Server/nkapi/receivePost';
 
 import * as Inject from '../../../stores/MenuStateStore';
 
@@ -24,16 +25,7 @@ class BlogContent extends Component<BCProps, BCState> {
 			data: [],
 		};
 
-		const parser = new Parser({
-			defaultRSS: 4,
-			timeout: 1500,
-		});
-
-		const CORSFree = 'https://cors-anywhere.herokuapp.com/';
-
-		parser.parseURL(CORSFree + 'https://blog.neonkid.xyz/rss').then(feed => {
-			this.setState({ data: feed.items });
-		});
+		receivePost().then(feed => this.setState({ data: feed.items }));
 	}
 
 	prettyContent = (content: any) => {
