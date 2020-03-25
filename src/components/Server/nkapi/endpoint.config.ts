@@ -2,6 +2,7 @@ const CORS_PROXY = 'https://cors-anywhere.herokuapp.com';
 
 const BLOG_URL = 'https://blog.neonkid.xyz/rss';
 const SERVER = 'https://apis.neonkid.xyz';
+const API_PREFIX = 'api';
 
 interface Config {
 	blog: {
@@ -26,7 +27,7 @@ const config: Config = {
 
 	contact: {
 		send: {
-			message: `${SERVER}/v1/sendMessage`,
+			message: `${SERVER}/${API_PREFIX}/v1/sendMessage`,
 		},
 	},
 };
