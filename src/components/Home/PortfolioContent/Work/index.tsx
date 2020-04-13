@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-import FB from '../../../Server/firebase';
+import { getPPContent, getThumbnailImgs } from '../../../Server/firebase/storage';
 
 import './styles.css';
 
@@ -20,28 +19,10 @@ const Work = ({ category, img, lng, title, caption, fileName, showPopup }: workP
 	const [content, setContent]: any = useState();
 
 	useEffect(() => {
-		const storage = FB.storage().ref();
-
-		// Get Thumbnails image,,
-		storage
-			.child('NKHOME/images/' + img)
-			.getDownloadURL()
-			.then(url => {
-				setWall(url);
-			});
-
-		// Get Portfolio content,,
-		storage
-			.child(`NKHOME/${lng}/${fileName}`)
-			.getDownloadURL()
-			.then(url => {
-				axios
-					.get(url, {
-						method: 'GET',
-					})
-					.then(res => {
-						setContent(res.data);
-					});
+		getThumbnailImgs(img).then(url => setWall(url));
+		getPPContent(lng, fileName)
+			.then(data => {
+				setContent(data);
 			})
 			.catch(err => {
 				setContent('Sorry. An error occurred while loading content. I will continue to process it.');
