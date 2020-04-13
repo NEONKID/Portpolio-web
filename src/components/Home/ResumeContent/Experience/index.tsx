@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { firestore } from 'firebase';
 
-import FB from '../../../Server/firebase';
+import { getExp } from '../../../Server/firebase/firestore';
 import Timeline from '../Timeline';
 import * as Inject from '../../../../stores/MenuStateStore';
 
@@ -20,14 +20,9 @@ const Experience = () => {
 	const data = useData();
 
 	useEffect(() => {
-		const db = FB.firestore();
-
-		db.collection('exp')
-			.where('lang', '==', data.curlanguage)
-			.get()
-			.then(snapshot => {
-				if (!snapshot.empty) setExp(snapshot.docs);
-			});
+		getExp(data.curlanguage).then(docs => {
+			setExp(docs);
+		});
 	});
 
 	return (

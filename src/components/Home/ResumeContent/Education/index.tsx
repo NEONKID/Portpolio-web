@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { firestore } from 'firebase';
 
-import FB from '../../../Server/firebase';
+import { getEduInfo } from '../../../Server/firebase/firestore';
 import Timeline from '../Timeline';
 import * as Inject from '../../../../stores/MenuStateStore';
 
@@ -20,14 +20,9 @@ const Education = () => {
 	const data = useData();
 
 	useEffect(() => {
-		const db = FB.firestore();
-
-		db.collection('edu')
-			.where('lang', '==', data.curlanguage)
-			.get()
-			.then(snapshot => {
-				if (!snapshot.empty) setEdu(snapshot.docs);
-			});
+		getEduInfo(data.curlanguage).then(docs => {
+			setEdu(docs);
+		});
 	});
 
 	return (
