@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'mobx-react';
 
-import 'ionicons/dist/css/ionicons.min.css';
+import 'ionicons/dist/css/ionicons.css';
 
 import Preloader from './Preloader';
 import Slider from './Slider';
