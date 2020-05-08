@@ -42,8 +42,8 @@
 		"eject": "react-scripts eject",
 		"build:css": "node-sass src/ -o src/",
 		"watch:css": "npm run build:css && node-sass src/ -o src/ --watch --recursive",
-		"snyk-protect": "snyk protect",
-		"prepublish": "npm run snyk-protect"
+		"snyk-auth": "snyk auth $SNYK_TOKEN",
+		"snyk-protect": "snyk test -prune-repeated-subdependencies"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -69,5 +69,5 @@
 		"@types/react-scroll": "^1.5.4",
 		"@types/webfontloader": "^1.6.29"
 	},
-	"snyk": false
+	"snyk": true
 }
