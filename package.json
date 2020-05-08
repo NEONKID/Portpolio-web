@@ -27,7 +27,9 @@
 		"react-dom": "^16.10.2",
 		"react-flag-kit": "^0.3.1",
 		"react-i18next": "^11.3.3",
+		"react-loader-spinner": "^3.1.14",
 		"react-moment": "^0.9.6",
+		"react-promise-tracker": "^2.1.0",
 		"react-scripts": "^3.4.0",
 		"react-scroll": "^1.7.14",
 		"react-typed": "^1.2.0",
@@ -68,6 +70,7 @@
 		"@types/isotope-layout": "^3.0.8",
 		"@types/lodash": "^4.14.150",
 		"@types/node-sass": "^4.11.0",
+		"@types/react-loader-spinner": "^3.1.0",
 		"@types/react-scroll": "^1.5.4",
 		"@types/webfontloader": "^1.6.29"
 	},
