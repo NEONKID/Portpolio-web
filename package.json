@@ -69,5 +69,5 @@
 		"@types/react-scroll": "^1.5.4",
 		"@types/webfontloader": "^1.6.29"
 	},
-	"snyk": true
+	"snyk": false
 }
