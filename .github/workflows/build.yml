@@ -21,7 +21,6 @@ jobs:
             - name: Downloads Checkouts...
               uses: actions/checkout@v1
             - name: Create Firebase Configuration for Neon K.I.D
-              uses: snyk/actions/node@master
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
                   FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
