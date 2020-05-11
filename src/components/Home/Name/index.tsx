@@ -25,7 +25,7 @@ class Name extends Component {
 					</h1>
 					<h2>
 						<Typed
-							strings={['Back-end Developer', 'Jr. Software Engineer']}
+							strings={['Android App Developer', 'Jr. Software Engineer', 'Back-end Developer']}
 							typeSpeed={60}
 							backSpeed={10}
 							backDelay={3600}
