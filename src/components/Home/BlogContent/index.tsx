@@ -23,7 +23,7 @@ const BlogContent = () => {
 	const data = useData();
 
 	const [feeds, setFeeds] = useState<Item[]>([]);
-	const [pageSize, setPageSize] = useState(3);
+	const [pageSize] = useState(3);
 	const [curPage, setCurPage] = useState(1);
 	const [itemCnt, setItemCnt] = useState(0);
 
