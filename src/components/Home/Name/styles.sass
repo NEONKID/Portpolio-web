@@ -4,13 +4,13 @@
     position: absolute
     width: 700px
     height: 700px
-    border: 1px solid rgba(255, 255, 255, 0.4)
+    border: 1px solid rgba(255, 255, 255, 0.2)
     display: table
     transition: all 0.5s
     z-index: 1
 
     .dark &
-        border: 1px solid rgba(51, 51, 51, 0.4)
+        border: 1px solid rgba(51, 51, 51, 0.2)
 
     &.reverse
         position: absolute
@@ -80,8 +80,7 @@
     bottom: 15%
 
     & a
-        border: 2px solid #FFF
-        color: #FFF
+        color: #FFF !important
         display: inline-block
         height: 35px
         width: 35px
@@ -97,9 +96,7 @@
             font-size: 15px
 
     & a:hover
-        background-color: rgba(255, 255, 255, 0.7)
-        border: 2px solid transparent
-        color: #333
+        opacity: 0.7
 
     .darka &
         border: 2px solid #333
