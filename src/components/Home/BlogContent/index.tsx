@@ -1,7 +1,6 @@
 import React, { useEffect, useState, ReactElement } from 'react';
 import { observer } from 'mobx-react';
 import { Item } from 'rss-parser';
-import { usePromiseTracker } from 'react-promise-tracker';
 import Loader from 'react-loader-spinner';
 
 import Pagination from './Pagination';
@@ -22,6 +21,7 @@ const useData = () => {
 const BlogContent = () => {
 	const data = useData();
 
+	const [isLoading, setIsLoading] = useState(true);
 	const [feeds, setFeeds] = useState<Item[]>([]);
 	const [pageSize] = useState(3);
 	const [curPage, setCurPage] = useState(1);
@@ -43,26 +43,31 @@ const BlogContent = () => {
 		} else return '';
 	};
 
-	const { promiseInProgress } = usePromiseTracker();
-
-	useEffect(() => {
-		if (data.blogState) {
-			receivePost().then((feed: Item) => {
-				setFeeds(feed.items);
-				setItemCnt(feeds.length);
-			});
-		}
-	});
-
-	const posts = paginate(feeds, curPage, pageSize);
-
 	let curPost: ReactElement[] = [
 		<div className="text-center" style={{ paddingTop: '4em', paddingBottom: '4em' }}>
 			<Loader type="Grid" color="#727272" height={100} width={100}></Loader>
 		</div>,
 	];
 
-	if (!promiseInProgress) {
+	useEffect(() => {
+		if (data.blogState) {
+			setIsLoading(true);
+
+			receivePost()
+				.then((feed: Item) => {
+					setFeeds(feed.items);
+					setItemCnt(feeds.length);
+				})
+				.catch(err => console.log(err))
+				.finally(() => {
+					setIsLoading(false);
+				});
+		}
+	}, [data.blogState, feeds.length]);
+
+	const posts = paginate(feeds, curPage, pageSize);
+
+	if (!isLoading) {
 		curPost = posts.map((item: Item, i: number) => {
 			let desc = prettyContent(item.content);
 			return (
