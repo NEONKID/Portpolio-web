@@ -45,8 +45,7 @@
     "build:css": "node-sass src/ -o src/",
     "watch:css": "npm run build:css && node-sass src/ -o src/ --watch --recursive",
     "snyk-auth": "snyk auth $SNYK_TOKEN",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "snyk-protect": "snyk protect"
   },
   "eslintConfig": {
     "extends": "react-app"
