@@ -15,7 +15,7 @@ jobs:
       matrix:
         node: [12.x]
         os: [ubuntu-latest]
-        language: [javascript, typescript]
+        language: [javascript]
 
     steps:
       - name: Set up Node.js ${{ matrix.node }}
