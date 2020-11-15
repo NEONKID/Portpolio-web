@@ -15,7 +15,7 @@ jobs:
       matrix:
         node: [12.x]
         os: [ubuntu-latest]
-        language: [javascript, typescript]
+        language: [javascript]
 
     steps:
       - name: Set up Node.js ${{ matrix.node }}
@@ -30,14 +30,14 @@ jobs:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
           echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
-      - name: Portpolio Build...
-        run: |
-          npm install
-          npm run build:css
-          npm run build
       - name: Initialize CodeQL..
         uses: github/codeql-action/init@v1
         with:
           languages: ${{ matrix.language }}
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+      - name: Portpolio Build...
+        run: |
+          npm install
+          npm run build:css
+          npm run build
