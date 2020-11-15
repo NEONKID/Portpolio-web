@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { firestore } from 'firebase';
+import Firebase from 'firebase';
 
 import { getEduInfo } from '../../../Server/firebase/firestore';
 import Timeline from '../Timeline';
@@ -16,11 +16,11 @@ const useData = () => {
 };
 
 const Education = () => {
-	const [edu, setEdu] = useState<Array<firestore.QueryDocumentSnapshot>>([]);
+	const [edu, setEdu] = useState<Array<Firebase.firestore.QueryDocumentSnapshot>>([]);
 	const data = useData();
 
 	useEffect(() => {
-		getEduInfo(data.curlanguage).then(docs => {
+		getEduInfo(data.curlanguage).then((docs) => {
 			setEdu(docs);
 		});
 	});
