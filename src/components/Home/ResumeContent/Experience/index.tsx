@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { firestore } from 'firebase';
+import Firebase from 'firebase';
 
 import { getExp } from '../../../Server/firebase/firestore';
 import Timeline from '../Timeline';
@@ -16,11 +16,11 @@ const useData = () => {
 };
 
 const Experience = () => {
-	const [exp, setExp] = useState<Array<firestore.QueryDocumentSnapshot>>([]);
+	const [exp, setExp] = useState<Array<Firebase.firestore.QueryDocumentSnapshot>>([]);
 	const data = useData();
 
 	useEffect(() => {
-		getExp(data.curlanguage).then(docs => {
+		getExp(data.curlanguage).then((docs) => {
 			setExp(docs);
 		});
 	});

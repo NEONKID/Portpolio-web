@@ -1,12 +1,12 @@
 import React from 'react';
-import { firestore } from 'firebase';
+import Firebase from 'firebase';
 
 import TLBlock from './TLBlock';
 import './styles.css';
 
 type TLProps = {
 	category: string;
-	details: Array<firestore.QueryDocumentSnapshot>;
+	details: Array<Firebase.firestore.QueryDocumentSnapshot>;
 };
 
 const Timeline = ({ category, details }: TLProps) => {
