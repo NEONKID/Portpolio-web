@@ -54,7 +54,7 @@ const BlogContent = () => {
 			setIsLoading(true);
 
 			receivePost()
-				.then((feed: Output) => {
+				.then((feed: Output<Item>) => {
 					setFeeds(feed.items || []);
 					setItemCnt(feeds.length);
 				})
