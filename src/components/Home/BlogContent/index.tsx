@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ReactElement } from 'react';
 import { observer } from 'mobx-react';
-import { Item } from 'rss-parser';
+import { Item, Output } from 'rss-parser';
 import Loader from 'react-loader-spinner';
 
 import Pagination from './Pagination';
@@ -54,11 +54,11 @@ const BlogContent = () => {
 			setIsLoading(true);
 
 			receivePost()
-				.then((feed: Item) => {
-					setFeeds(feed.items);
+				.then((feed: Output) => {
+					setFeeds(feed.items || []);
 					setItemCnt(feeds.length);
 				})
-				.catch(err => console.log(err))
+				.catch((err) => console.log(err))
 				.finally(() => {
 					setIsLoading(false);
 				});
