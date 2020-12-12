@@ -1,4 +1,4 @@
-import Parser, { Output } from 'rss-parser';
+import Parser, { Item, Output } from 'rss-parser';
 
 import endpoint from './endpoint.config';
 
@@ -8,10 +8,10 @@ export const receivePost = () => {
 		timeout: 10000,
 	});
 
-	return new Promise<Output>((resolve, reject) => {
+	return new Promise<Output<Item>>((resolve, reject) => {
 		parser
 			.parseURL(endpoint.blog.receive.content)
-			.then((feed: Output) => resolve(feed))
-			.catch(err => reject(err));
+			.then((feed: Output<Item>) => resolve(feed))
+			.catch((err) => reject(err));
 	});
 };
