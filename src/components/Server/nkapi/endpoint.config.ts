@@ -1,5 +1,3 @@
-const CORS_PROXY = 'https://cors-anywhere.herokuapp.com';
-
 const BLOG_URL = 'https://blog.neonkid.xyz/rss';
 const SERVER = 'https://apis.neonkid.xyz';
 
@@ -20,7 +18,7 @@ interface Config {
 const config: Config = {
 	blog: {
 		receive: {
-			content: `${CORS_PROXY}/${BLOG_URL}`,
+			content: `${BLOG_URL}`,
 		},
 	},
 
