@@ -1,12 +1,11 @@
 import React, { useEffect, useState, ReactElement } from 'react';
 import { observer } from 'mobx-react';
-import { Item, Output } from 'rss-parser';
 import Loader from 'react-loader-spinner';
 
 import Pagination from './Pagination';
 import Post from './Post';
 import { paginate } from './Pagination/paginate';
-import { receivePost } from '../../Server/nkapi/receivePost';
+import { receivePost, FeedBody, FeedEntry } from '../../Server/nkapi/receivePost';
 
 import * as Inject from '../../../stores/MenuStateStore';
 
@@ -22,7 +21,7 @@ const BlogContent = () => {
 	const data = useData();
 
 	const [isLoading, setIsLoading] = useState(true);
-	const [feeds, setFeeds] = useState<Item[]>([]);
+	const [feeds, setFeeds] = useState<FeedEntry[]>([]);
 	const [pageSize] = useState(3);
 	const [curPage, setCurPage] = useState(1);
 	const [itemCnt, setItemCnt] = useState(0);
@@ -36,10 +35,9 @@ const BlogContent = () => {
 	const prettyContent = (content: any) => {
 		if (typeof content === 'string') {
 			return content
+				.replaceAll('<div class="revenue_unit_info">반응형</div>', '')
 				.replace(/(<([^>]+)>)/gi, '')
-				.replace('(adsbygoogle = window.adsbygoogle || []).push({});', '')
-				.replace('&nbsp;', '')
-				.substring(5, 250);
+				.replace('&nbsp;', '');
 		} else return '';
 	};
 
@@ -54,8 +52,8 @@ const BlogContent = () => {
 			setIsLoading(true);
 
 			receivePost()
-				.then((feed: Output<Item>) => {
-					setFeeds(feed.items || []);
+				.then((feed: FeedBody) => {
+					setFeeds(feed.entries || []);
 					setItemCnt(feeds.length);
 				})
 				.catch((err) => console.log(err))
@@ -68,15 +66,15 @@ const BlogContent = () => {
 	const posts = paginate(feeds, curPage, pageSize);
 
 	if (!isLoading) {
-		curPost = posts.map((item: Item, i: number) => {
-			let desc = prettyContent(item.content);
+		curPost = posts.map((item: FeedEntry, i: number) => {
+			let desc = prettyContent(item.summary);
 			return (
 				<Post
 					title={item.title}
-					pubDate={item.pubDate}
-					categories={item.categories}
+					pubDate={item.published}
+					categories={item.tags}
 					desc={desc}
-					address={item.guid}
+					address={item.link}
 					key={i}
 				/>
 			);

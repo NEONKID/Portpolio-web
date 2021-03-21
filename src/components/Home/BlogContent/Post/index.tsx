@@ -1,18 +1,19 @@
 import React from 'react';
 import Moment from 'react-moment';
 
+import { Tag } from '../../../Server/nkapi/receivePost';
 import './styles.css';
 
 type PostProps = {
 	title?: string;
 	pubDate?: string;
-	categories?: string[];
+	categories?: Tag[];
 	address?: string;
 	desc?: string;
 };
 
 const Post = ({ title, pubDate, categories, address, desc }: PostProps) => {
-	const category = Array.isArray(categories) ? categories[0] : '';
+	const category: Tag | any = Array.isArray(categories) ? categories[0] : '';
 
 	return (
 		<div className="post">
@@ -27,7 +28,7 @@ const Post = ({ title, pubDate, categories, address, desc }: PostProps) => {
 						<Moment format="YYYY. MM. DD">{pubDate}</Moment>
 					</span>
 					<span className="slash"></span>
-					<span className="post-category">{category}</span>
+					<span className="post-category">{category.term}</span>
 				</p>
 			</div>
 			<div className="post-body">

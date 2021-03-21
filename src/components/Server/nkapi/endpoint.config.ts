@@ -1,4 +1,3 @@
-const BLOG_URL = 'https://blog.neonkid.xyz/rss';
 const SERVER = 'https://apis.neonkid.xyz';
 
 interface Config {
@@ -18,7 +17,7 @@ interface Config {
 const config: Config = {
 	blog: {
 		receive: {
-			content: `${BLOG_URL}`,
+			content: `${SERVER}/v1/getfeeds`,
 		},
 	},
 
