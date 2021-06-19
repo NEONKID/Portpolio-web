@@ -9,7 +9,7 @@ export const getEduInfo = (curLang: string): Promise<Array<Firebase.firestore.Qu
 		db.collection('edu')
 			.where('lang', '==', curLang)
 			.get()
-			.then(snapshot => {
+			.then((snapshot) => {
 				if (!snapshot.empty) resolve(snapshot.docs);
 			});
 	});
@@ -20,7 +20,7 @@ export const getExp = (curLang: string): Promise<Array<Firebase.firestore.QueryD
 		db.collection('exp')
 			.where('lang', '==', curLang)
 			.get()
-			.then(snapshot => {
+			.then((snapshot) => {
 				if (!snapshot.empty) resolve(snapshot.docs);
 			});
 	});

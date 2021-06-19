@@ -23,7 +23,7 @@ const Education = () => {
 		getEduInfo(data.curlanguage).then((docs) => {
 			setEdu(docs);
 		});
-	});
+	}, [data.curlanguage]);
 
 	return (
 		<div className="block-content">
