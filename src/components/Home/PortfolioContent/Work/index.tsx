@@ -19,15 +19,15 @@ const Work = ({ category, img, lng, title, caption, fileName, showPopup }: workP
 	const [content, setContent]: any = useState();
 
 	useEffect(() => {
-		getThumbnailImgs(img).then(url => setWall(url));
+		getThumbnailImgs(img).then((url) => setWall(url));
 		getPPContent(lng, fileName)
-			.then(data => {
+			.then((data) => {
 				setContent(data);
 			})
-			.catch(err => {
+			.catch((err) => {
 				setContent('Sorry. An error occurred while loading content. I will continue to process it.');
 			});
-	});
+	}, [fileName, img, lng]);
 
 	return (
 		<div className={'col-md-4 col-sm-6 col-xs-12 portfolio-item ' + category}>

@@ -22,7 +22,7 @@ const Slider = () => {
 		setTimeout(() => {
 			if (!data.siteLoading) data.onRemoveSplash();
 		}, 1000);
-	});
+	}, [data]);
 
 	return <div className={style}></div>;
 };

@@ -24,7 +24,7 @@ const Preloader = () => {
 
 	useEffect(() => {
 		setTimeout(() => data.loadingComplete(), 1500);
-	});
+	}, [data]);
 
 	return (
 		<div className={style} style={data.removeSplash ? { display: 'none' } : {}}>
