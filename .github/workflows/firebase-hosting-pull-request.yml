@@ -3,8 +3,20 @@ on: pull_request
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [14.x]
+        os: [ubuntu-latest]
+        language: [javascript]
+
     steps:
+      - name: Set up Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
       - name: Create Firebase Configuration for Neon K.I.D
         uses: actions/checkout@v2
         env:
@@ -12,17 +24,21 @@ jobs:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
           run: |
             echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
+
       - name: Initialize CodeQL..
         uses: github/codeql-action/init@v1
         with:
-          languages: [javascript]
+          languages: ${{ matrix.language }}
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+
       - name: N.K Portpolio Build...
         run: |
           npm install
           npm run build:css
           npm run build
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
