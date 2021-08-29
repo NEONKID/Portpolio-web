@@ -8,6 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Create Firebase Configuration for Neon K.I.D
+        env:
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          run: |
+            echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+      - name: N.K Portpolio Build...
       - run: |
           npm install
           npm run build:css
