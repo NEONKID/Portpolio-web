@@ -17,8 +17,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Create Firebase Configuration for Neon K.I.D
+      - name: Downloads Checkouts...
         uses: actions/checkout@v2
+
+      - name: Create Firebase Configuration for Neon K.I.D
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
