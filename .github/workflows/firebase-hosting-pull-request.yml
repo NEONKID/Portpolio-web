@@ -14,4 +14,6 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NK_PROJECT_8EC03 }}'
+          expires: 7d
           projectId: nk-project-8ec03
+          channelId: preview
