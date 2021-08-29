@@ -10,6 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create Firebase Configuration for Neon K.I.D
         env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
           run: |
             echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
