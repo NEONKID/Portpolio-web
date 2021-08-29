@@ -5,26 +5,32 @@ on:
       - master
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [14.x]
+        os: [ubuntu-latest]
+
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
       - name: Create Firebase Configuration for Neon K.I.D
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
-          run: |
-            echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
-      - name: Initialize CodeQL..
-        uses: github/codeql-action/init@v1
-        with:
-          languages: [javascript]
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+        run: |
+          echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
+
       - name: N.K Portpolio Build...
-      - run: |
+        run: |
           npm install
           npm run build:css
           npm run build
+
+      - name: Deploy firebase live channel (Production)
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
