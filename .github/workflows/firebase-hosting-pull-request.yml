@@ -20,10 +20,9 @@ jobs:
       - name: Create Firebase Configuration for Neon K.I.D
         uses: actions/checkout@v2
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
-          run: |
-            echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
+        run: |
+          echo $FIREBASE_CONFIG > src/components/Server/firebase/config.json
 
       - name: Initialize CodeQL..
         uses: github/codeql-action/init@v1
@@ -39,7 +38,8 @@ jobs:
           npm run build:css
           npm run build
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy Preview Channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NK_PROJECT_8EC03 }}'
