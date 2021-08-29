@@ -23,7 +23,7 @@ const Experience = () => {
 		getExp(data.curlanguage).then((docs) => {
 			setExp(docs);
 		});
-	}, [data.curlanguage]);
+	}, []);
 
 	return (
 		<div className="block-content">
