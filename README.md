@@ -1,6 +1,6 @@
 # Portpolio for Neon K.I.D
 
-[![Build Status](https://github.com/NEONKID/Portpolio-react/workflows/Deploy/badge.svg)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
+[![Build Status](https://github.com/NEONKID/Portpolio-web/workflows/Deploy/badge.svg)](https://github.com/NEONKID/Portpolio-react/actions?workflow=Deploy)
 
 이 레포지터리는 Neon K.I.D의 포트폴리오 레포지터리입니다. 
 
@@ -50,10 +50,8 @@ https://neonkid.xyz
 
 **Front-end**
 
-* React + Typescript
-* MobX
+* Angular 12 + Typescript
 * SASS
-* i18next
 * Bootstrap 3
 
 **Back-end**
@@ -69,16 +67,8 @@ https://neonkid.xyz
 
 ## How to use
 
-이 레포지터리를 클론하여 로컬에서 사용하고자 하는 경우, 아래의 지침을 따르십시오.
-
-```bash
-$ yarn build:css
-```
-
-SASS 파일을 CSS로 변환한 뒤,
-
 ```bash
 $ yarn start
 ```
 
-React Development Server를 실행하여 테스트해주세요.
+Angular Development Server를 실행하여 테스트해주세요.
