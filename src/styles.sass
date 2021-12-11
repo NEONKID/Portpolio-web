@@ -1,4 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/*------------------------------------------------------------------*/ 
+/*	01) BASE
+/*------------------------------------------------------------------*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+	background: transparent
+	border: 0
+	margin: 0
+	padding: 0
+	vertical-align: baseline
+	outline: none
+
 html
 	overflow-x: hidden
 	padding: 0px
@@ -32,3 +43,225 @@ h5
 	font-size: 20px
 h6
 	font-size: 16px
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
+	display: block
+
+blockquote
+	quotes: none
+
+	&:before, blockquote:after
+		content: ''
+		content: none
+
+ul, ol
+	margin: 0px
+
+ul li, ol li
+	margin: 0px
+
+img
+	vertical-align: middle
+	max-width: 100%
+
+iframe
+	max-width: 100%
+
+del
+	text-decoration: line-through
+
+a
+	border: none
+
+	&:hover
+		text-decoration: none
+
+i
+	border: none
+
+table
+	width: 100%
+	max-width: 100%
+	text-align: left
+	border-collapse: collapse
+	border-spacing: 0px
+	margin-bottom: 15px
+	color: #999
+	border: 1px solid #eee
+
+	& tr
+		border: 1px solid #eee
+
+	& th
+		vertical-align: top
+		color: #333
+		background: none
+		font-size: 16px
+		font-weight: normal
+		padding: 15px 10px
+		border: 1px solid #eee
+
+	& td
+		vertical-align: top
+		padding: 10px
+		border: 1px solid #eee
+
+code, pre
+	padding: 10px
+	padding-bottom: 0
+	border-left: 3px solid #6FBF71
+	border-bottom: 1px solid transparent
+	background: #f7f7f7
+	overflow-x: scroll
+
+pre
+	display: block
+	word-break: break-all
+	word-wrap: break-word
+
+	& code
+		white-space: pre-wrap
+
+.space10
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 10px
+
+.space20
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 20px
+
+.space30
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 30px
+
+.space40
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 40px
+
+.space50
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 50px
+
+.space60
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 60px
+
+.space70
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 70px
+
+.space80
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 80px
+
+.space90
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 90px
+
+.space100
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 100px
+
+.space200
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 200px
+
+.space300
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 300px
+
+.space400
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 400px
+
+.space500
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 500px
+
+.space1000
+	width: 100%
+	float: left
+	clear: both
+	margin-bottom: 1000px
+
+/*------------------------------------------------------------------*/ 
+/*	02) FORM ELEMENTS
+/*------------------------------------------------------------------*/
+
+textarea
+	border-radius: 0
+	font-size: 13px
+	resize: vertical
+	font-family: "Poppins"
+	letter-spacing: 1.2px !important
+
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	-ms-box-sizing: border-box
+	box-sizing: border-box
+
+	line-height: 1.4
+	padding: 10px!important
+	width: 100%
+	border: 1px solid #eee
+	font-weight: 400 !important
+
+	-webkit-transition: all .3s ease
+	-moz-transition: all .3s ease
+	-ms-transition: all .3s ease
+	-o-transition: all .3s ease
+	transition: all .3s ease
+
+/*------------------------------------------------------------------*/ 
+/*	04) SKELETON OR GRID
+/*------------------------------------------------------------------*/
+
+.container
+	max-width: 1170px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	height: auto
+	padding: 0px 40px
+	position: relative
+	clear: both
+
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+@media (max-width: 1040px)
+	.container
+		padding: 0px 20px
+
+@media (max-width: 480px)
+	.container
+		padding: 0px 10px
