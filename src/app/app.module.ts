@@ -9,9 +9,10 @@ import { SharedModule } from '@app/shared';
 import { ContentLayoutComponent } from './wraps/content-layout/content-layout.component';
 import { LeftSidebarComponent } from './wraps/left-sidebar/left-sidebar.component';
 import { WrapsComponent } from './wraps/wraps.component';
+import { MobileMenuComponent } from './wraps/mobile-menu/mobile-menu.component';
 
 @NgModule({
-	declarations: [AppComponent, ContentLayoutComponent, LeftSidebarComponent, WrapsComponent],
+	declarations: [AppComponent, ContentLayoutComponent, LeftSidebarComponent, WrapsComponent, MobileMenuComponent],
 	imports: [BrowserModule, AppRoutingModule, ContentModule, SharedModule],
 	providers: [],
 	bootstrap: [AppComponent],

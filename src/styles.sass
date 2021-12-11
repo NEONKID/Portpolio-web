@@ -24,6 +24,7 @@ body
 	font-weight: 400
 	background-color: #fff
 	color: #333
+	-webkit-backface-visibility: hidden
 
 h1, h2, h3, h4, h5, h6
 	font-weight: 500
@@ -265,3 +266,22 @@ textarea
 @media (max-width: 480px)
 	.container
 		padding: 0px 10px
+
+.spinner
+	width: 70px
+	height: 70px
+	background-color: #fff
+
+	border-radius: 100%
+	-webkit-animation: sk-scaleout 1.0s infinite ease-in-out
+	animation: sk-scaleout 1.0s infinite ease-in-out
+
+@keyframes sk-scaleout
+	0%
+		-webkit-transform: scale(0)
+		transform: scale(0)
+
+	100%
+		-webkit-transform: scale(1.0)
+		transform: scale(1.0)
+		opacity: 0
