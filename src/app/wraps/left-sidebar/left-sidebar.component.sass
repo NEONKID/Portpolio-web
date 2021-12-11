@@ -1,0 +1,138 @@
+/*---------------------------------------------------*/
+/*	ARLO SIDEBAR DEMO
+/*---------------------------------------------------*/
+
+.arlo_tm_leftpart
+	width: 400px
+	position: fixed
+	top: 0px
+	left: 0px
+	bottom: 0px
+	background-color: #002245
+	z-index: 3
+	box-shadow: 0 0 30px rgba(0,34,69,0.05)
+
+	-webkit-transition: all .3s ease
+	-moz-transition: all .3s ease
+	-ms-transition: all .3s ease
+	-o-transition: all .3s ease
+	transition: all .3s ease
+
+	& .inner
+		width: 100%
+		height: 100%
+		clear: both
+		float: left
+		padding: 60px
+
+	& .inner .logo
+		float: left
+
+	& .inner .logo img
+		max-width: 200px
+		max-height: 200px
+
+	& .inner .menu
+		width: 100%
+		height: auto
+		clear: both
+		float: left
+
+	& .inner .menu ul
+		margin: 0px
+		list-style-type: none
+		width: 100%
+		min-height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+	& .inner .menu ul li
+		margin: 0px
+
+	& .inner .menu ul li a
+		text-decoration: none
+		color: #fff
+		text-transform: capitalize
+		display: block
+		position: relative
+		padding: 13px 0px
+		font-family: "Poppins"
+		font-weight: 500
+
+		-webkit-transition: all .3s ease
+		-moz-transition: all .3s ease
+		-ms-transition: all .3s ease
+		-o-transition: all .3s ease
+		transition: all .3s ease
+
+	& .inner .menu ul li.current a
+		color: #e54b4b
+
+	& .inner .menu ul li.current a:after
+		width: 100%
+
+	& .inner .menu ul li a:hover
+		color: #e54b4b
+
+	& .inner .menu ul li a:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 2px
+		background-color: rgba(255,255,255,.015)
+		left: 0px
+		bottom: 0px
+
+	& .inner .menu ul li:last-child a:before
+		display: none
+
+	& .inner .menu ul li a:after
+		position: absolute
+		content: ""
+		width: 0%
+		height: 2px
+		background-color: rgba(255,255,255,.025)
+		left: 0px
+		bottom: 0px
+
+		-webkit-transition: all .3s ease
+		-moz-transition: all .3s ease
+		-ms-transition: all .3s ease
+		-o-transition: all .3s ease
+		transition: all .3s ease
+
+	& .inner .menu ul li:last-child a:after
+		display: none
+
+	& .inner .menu ul li a:hover:after
+		width: 100%
+
+	& .inner .bottom
+		position: absolute
+		bottom: 50px
+		left: 60px
+
+	& .inner .bottom ul
+		margin: 0px
+		list-style-type: none
+
+	& .inner .bottom ul li
+		margin: 0px 18px 0px 0px
+		display: inline-block
+
+	& .inner .bottom ul li:last-child
+		margin-right: 0px
+
+	& .inner .bottom ul li a
+		text-decoration: none
+		color: #fff
+
+		-webkit-transition: all .3s ease
+		-moz-transition: all .3s ease
+		-ms-transition: all .3s ease
+		-o-transition: all .3s ease
+		transition: all .3s ease
+
+	& .inner .bottom ul li a:hover
+		color: #e54b4b
