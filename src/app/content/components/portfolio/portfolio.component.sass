@@ -1,0 +1,154 @@
+.arlo_tm_section
+	width: 100%
+	// height: auto
+	// clear: both
+	// float: left
+	position: absolute
+	top: auto
+	left: 0
+	visibility: hidden
+	backface-visibility: hidden
+	transform: translate3d(0,0,0)
+	transform-style: preserve-3d
+
+	& .is_active
+		visibility: visible
+		z-index: 90
+		opacity: 1
+		height: auto
+		min-height: 100%
+
+/*---------------------------------------------------*/
+/*	07) ARLO PORTFOLIO
+/*---------------------------------------------------*/
+
+.arlo_tm_portfolio
+	width: 100%
+	height: auto
+	clear: both
+	float: left
+	margin-bottom: 100px
+	padding-top: 141px
+
+	& .portfolio_inner
+		width: 100%
+		height: auto
+		clear: both
+		float: left
+		padding-top: 73px
+
+	& .portfolio_filter
+		width: 100%
+		height: auto
+		clear: both
+		float: left
+		margin-bottom: 20px
+
+	& .portfolio_filter ul
+		margin: 0px
+		list-style-type: none
+
+	& .portfolio_filter ul li
+		margin: 0px 30px 20px 0px
+		display: inline-block
+
+	& .portfolio_filter ul li:last-child
+		margin-right: 0px
+
+	& .portfolio_filter ul li a
+		text-decoration: none
+		color: #000
+		position: relative
+		display: inline-block
+		font-weight: 500
+		font-family: "Poppins"
+
+		-webkit-transition: all .3s ease
+		-moz-transition: all .3s ease
+		-ms-transition: all .3s ease
+		-o-transition: all .3s ease
+		transition: all .3s ease
+
+	& .portfolio_filter ul li a.current
+		color: #e65f78
+
+	& .portfolio_filter ul li a:hover
+		color: #e65f78
+
+	& .portfolio_list
+		width: 100%
+		height: auto
+		clear: both
+		float: left
+
+	& .portfolio_list ul
+		margin: 0px 0px 0px -50px
+		list-style-type: none
+
+	& .portfolio_list ul li
+		margin: 0px 0px 50px 0px
+		float: left
+		width: 33.3333%
+		padding-left: 50px
+
+	& .portfolio_list ul li .inner
+		width: 100%
+		height: auto
+		clear: both
+		float: left
+		overflow: hidden
+		position: relative
+
+	& .portfolio_list ul li .inner img
+		opacity: 0
+		min-width: 100%
+
+	& .portfolio_list ul li .inner .main_image
+		position: absolute
+		top: 0px
+		bottom: 0px
+		left: 0px
+		right: 0px
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+
+		-webkit-transition: all .3s ease
+		-moz-transition: all .3s ease
+		-ms-transition: all .3s ease
+		-o-transition: all .3s ease
+		transition: all .3s ease
+
+	& .portfolio_list ul li .inner:hover .main_image
+		transform: scale(1.1) translateZ(0)
+
+	&_titles
+		white-space: nowrap
+		background: #ffffff
+		font-size: 18px
+		padding: 5px 15px
+		font-family: "Poppins"
+		font-weight: 600
+		color: #000
+		position: fixed
+		z-index: 5
+		opacity: 0
+		visibility: hidden
+
+	&_titles.visible
+		opacity: 1
+		visibility: visible
+
+	&_titles .work__cat
+		position: absolute
+		background: #ffffff
+		top: 100%
+		left: 0
+		margin-top: -10px
+		font-family: "Poppins"
+		font-size: 16px
+		font-weight: 400
+		padding: 5px 15px
+
+.entry
+	position: relative
