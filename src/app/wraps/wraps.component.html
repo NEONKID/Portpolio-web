@@ -1,5 +1,5 @@
 <div class="arlo_tm_all_wrap">
 	<app-mobile-menu></app-mobile-menu>
-	<app-left-sidebar></app-left-sidebar>
-	<app-content-layout></app-content-layout>
+	<app-left-sidebar [isHomeEnabled]="isHomeEnabled" [isPortfolioEnabled]="isPortfolioEnabled"></app-left-sidebar>
+	<app-content-layout [isHomeEnabled]="isHomeEnabled" [isPortfolioEnabled]="isPortfolioEnabled"></app-content-layout>
 </div>

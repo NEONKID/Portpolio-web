@@ -7,6 +7,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 	encapsulation: ViewEncapsulation.None,
 })
 export class WrapsComponent implements OnInit {
+	isHomeEnabled = true;
+	isPortfolioEnabled = false;
+
 	constructor() {}
 
 	ngOnInit(): void {}
