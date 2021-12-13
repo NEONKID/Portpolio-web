@@ -6,13 +6,13 @@ import { AppComponent } from '@app/app.component';
 import { ContentModule } from '@app/content';
 import { SharedModule } from '@app/shared';
 
-import { ContentLayoutComponent } from './wraps/content-layout/content-layout.component';
-import { LeftSidebarComponent } from './wraps/left-sidebar/left-sidebar.component';
-import { WrapsComponent } from './wraps/wraps.component';
-import { MobileMenuComponent } from './wraps/mobile-menu/mobile-menu.component';
+import { ContentLayoutComponent } from './home/content-layout/content-layout.component';
+import { LeftSidebarComponent } from './home/left-sidebar/left-sidebar.component';
+import { HomeComponent } from './home/home.component';
+import { MobileMenuComponent } from './home/mobile-menu/mobile-menu.component';
 
 @NgModule({
-	declarations: [AppComponent, ContentLayoutComponent, LeftSidebarComponent, WrapsComponent, MobileMenuComponent],
+	declarations: [AppComponent, ContentLayoutComponent, LeftSidebarComponent, HomeComponent, MobileMenuComponent],
 	imports: [BrowserModule, AppRoutingModule, ContentModule, SharedModule],
 	providers: [],
 	bootstrap: [AppComponent],
