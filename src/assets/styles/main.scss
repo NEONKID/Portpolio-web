@@ -1,0 +1,121 @@
+/*------------------------------------------------------------------*/
+/*	01) BASE
+/*------------------------------------------------------------------*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	outline: none;
+}
+
+html {
+	overflow-x: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: "Mulish";
+	font-size: 16px;
+	line-height: 2;
+	letter-spacing: 0.5px;
+	word-wrap: break-word;
+	font-weight: 400;
+	background-color: #fff;
+	color: #333;
+	-webkit-backface-visibility: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+	line-height: 1.4;
+	font-family: "Poppins";
+	color: #000;
+}
+
+h1 { font-size: 45px; }
+h2 { font-size: 36px; }
+h3 { font-size: 30px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+blockquote {
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+
+ul, ol {
+	margin: 0px;
+}
+
+ul li, ol li {
+	margin: 0px;
+}
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+a {
+	border: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+i {
+	border: none;
+}
+
+/* --- FIX: Crucial box-sizing styles from original home.component.sass --- */
+.arlo_tm_all_wrap,
+.arlo_tm_all_wrap * {
+  box-sizing: border-box;
+}
+
+/*------------------------------------------------------------------*/
+/*	04) SKELETON OR GRID
+/*------------------------------------------------------------------*/
+
+.container {
+	max-width: 1170px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	padding: 0px 40px;
+	position: relative;
+	clear: both;
+}
+
+@media (max-width: 1040px) {
+	.container {
+		padding: 0px 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0px 10px;
+	}
+}
